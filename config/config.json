@@ -1,11 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "password",
     "database": "wingman_db",
     "host": "127.0.0.1",
     "port": 3306,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",

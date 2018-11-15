@@ -14,16 +14,11 @@ module.exports = function(app) {
 
   // index route loads index.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, "../public/html/index.html"));
   });
 
-  app.get("/anotherpage", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/anotherpage.html"));
-  });
-
-  // blog route loads blog.html
-  app.get("/yetanotherpage", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/yetanotherpage.html"));
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
 };

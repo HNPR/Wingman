@@ -1,0 +1,25 @@
+{
+  "name": "wingman",
+  "version": "1.0.0",
+  "description": "A mobile-focused app for finding a wingman/wingwoman to keep your journey safe!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HNPR/Wingman.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HNPR/Wingman/issues"
+  },
+  "homepage": "https://github.com/HNPR/Wingman#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
+  }
+}

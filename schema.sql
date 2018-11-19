@@ -7,16 +7,17 @@ CREATE TABLE user (
   fullname VARCHAR(100) NOT NULL,
   age INT NULL,
   gender TINYINT,
-  googleID VARCHAR(100) NULL,
+  googleID VARCHAR(100) NOT NULL,
   emailAddress VARCHAR(255),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE walks (
+CREATE TABLE walk (
     id INT NOT NULL AUTO_INCREMENT,
-    walkerId INT NOT NULL,
-    volunteerId INT NOT NULL,
+    walkerId INT,
+    volunteerId INT,
     startLocation VARCHAR(255) NOT NULL,
     endLocation VARCHAR(255) NOT NULL,
     startTime DATETIME
+    completed BOOLEAN NOT NULL
 )

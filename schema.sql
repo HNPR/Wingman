@@ -5,10 +5,11 @@ USE wingman_db;
 CREATE TABLE user (
   id INT NOT NULL AUTO_INCREMENT,
   fullname VARCHAR(100) NOT NULL,
-  age INT NULL,
+  age TINYINT,
   gender TINYINT,
   googleID VARCHAR(100) NOT NULL,
   emailAddress VARCHAR(255),
+  profilePhoto VARCHAR(255),
   PRIMARY KEY (id)
 );
 

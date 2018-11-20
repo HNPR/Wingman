@@ -17,7 +17,14 @@
 <body>
     <div class="ui container" id="narrow">
       <div class="ui borderless massive menu">
-        <a class="header item">Wingman Profile</a>
+        <div class="ui small image">
+            <svg width="75" height="75">
+              <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
+            </svg>
+          </div>
+        
+        <a class="header item">Wingman Profile</a> 
+        
         <div class="ui right secondary menu">
           <a class="item" href= "login2.html">Log In</a><a class="item" href="aboutUs.html">About Us</a><a class="active item">Profile</a>
         </div>
@@ -33,7 +40,26 @@
             </svg>
           </div>
         <p class="lead">
-          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            <div class="ui list">
+                <a class="item">
+                  <i class="address card outline icon"></i>
+                  <div class="content">
+                    <div class="header">Name</div>
+                    <div class="description">John Doe</div>
+                  </div>
+                </a>
+                <a class="item">
+                  <i class="right triangle icon"></i>
+                  <div class="content">
+                    <div class="header">Icon Alignment</div>
+                    <div class="description">Floated icons are by default top aligned. To have an icon top aligned try this example.</div>
+                  </div>
+                </a>
+                <div class="item">
+                  <i class="help icon"></i>
+                  Inline Text
+                </div>
+              </div>
         </p>
         <a class="ui massive yellow button">Request a Wingman</a>
         <a class="ui massive yellow button">Volunteer</a>

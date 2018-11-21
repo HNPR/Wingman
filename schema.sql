@@ -9,7 +9,7 @@ CREATE TABLE user (
   gender VARCHAR(25),
   googleID VARCHAR(100) NOT NULL,
   emailAddress VARCHAR(255),
-  profilePhoto VARCHAR(255),
+  profilePhoto VARCHAR(20000),
   PRIMARY KEY (id)
 );
 
@@ -19,6 +19,7 @@ CREATE TABLE walk (
     volunteerId INT,
     startLocation VARCHAR(255) NOT NULL,
     endLocation VARCHAR(255) NOT NULL,
-    startTime DATETIME
-    completed BOOLEAN DEFAULT (false) NOT NULL
+    startTime DATETIME,
+    completed BOOLEAN DEFAULT false NOT NULL,
+    PRIMARY KEY (id)
 )

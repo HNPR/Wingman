@@ -9,7 +9,7 @@ CREATE TABLE user (
   gender VARCHAR(25),
   googleID VARCHAR(100) NOT NULL,
   emailAddress VARCHAR(255),
-  profilePhoto VARCHAR(20000),
+  profilePhoto TEXT,
   PRIMARY KEY (id)
 );
 

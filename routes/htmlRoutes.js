@@ -24,6 +24,7 @@ module.exports = function (app) {
       res.cookie('displayName', req.session.displayName);
       res.cookie('googleID', req.session.googleID);
       res.cookie('profilePic', req.session.profilePic);
+      res.cookie('gender', req.session.gender);
       res.sendFile(path.join(__dirname, "../public/html/walker-walkee.html"));
       // res.json({
       //   status: 'session cookie set'
@@ -81,6 +82,7 @@ module.exports = function (app) {
       req.session.googleID = req.user.profile.id;
       req.session.displayName = req.user.profile.displayName;
       req.session.profilePic = req.user.profile.photos[0].value;
+      req.session.gender = req.user.profile.gender;
       
       res.redirect('/');
     }

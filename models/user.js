@@ -8,7 +8,8 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     age: {
-      type: DataTypes.TINYINT
+      type: DataTypes.TINYINT,
+      isInt: true,
     },
     gender: {
       type: DataTypes.STRING,
@@ -18,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     googleID: {
       type: DataTypes.STRING,
-      allowNull: false,
+      required: true,
       validate: {
         len: [1, 100]
       }
@@ -31,8 +32,21 @@ module.exports = function(sequelize, DataTypes) {
         }
     },
     profilePhoto: {
-        type: DataTypes.TEXT
+        type: DataTypes.TEXT,
+        // isUrl: true,
+    },
+    created_at: {
+        type: DataTypes.DATE,
+        allowNull: false,
     }
   });
+
+  User.associate = function(models) {
+    // Associating User with Walk
+    // When a user is deleted, also delete any associated walks
+    User.hasMany(models.Walk, {
+        onDelete: "cascade"
+    });
+  };
   return User;
 };

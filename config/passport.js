@@ -14,6 +14,9 @@ module.exports = (passport) => {
             callbackURL: "/auth/google/callback"
         },
         (token, refreshToken, profile, done) => {
+            // check if user exists in our Users table
+            // if not, then create new user in Users table
+            
             return done(null, {
                 profile: profile,
                 token: token

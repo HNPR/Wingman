@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     fullname: {
       type: DataTypes.STRING,
@@ -25,27 +25,31 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     emailAddress: {
-        type: DataTypes.STRING,
-        validate: {
-            isEmail: true,
-            len: [1, 255]
-        }
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: true,
+        len: [1, 255]
+      }
     },
     profilePhoto: {
-        type: DataTypes.TEXT,
-        // isUrl: true,
-    },
-    created_at: {
-        type: DataTypes.DATE,
-        allowNull: false,
+      type: DataTypes.TEXT,
+      // isUrl: true,
     }
+    // created_at: {
+    //     type: DataTypes.DATE,
+    //     allowNull: false,
+    // }
   });
 
-  User.associate = function(models) {
+  User.associate = function (models) {
     // Associating User with Walk
     // When a user is deleted, also delete any associated walks
     User.hasMany(models.Walk, {
-        onDelete: "cascade"
+      onDelete: "cascade",
+      foreignKey: {
+        name: "requestorID",
+        allowNull: false
+      }
     });
   };
   return User;

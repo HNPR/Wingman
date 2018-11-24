@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Walk = sequelize.define("Walk", {
-    requestorID: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+    // requestorID: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
     volunteerID: {
         type: DataTypes.STRING,
     },
@@ -23,11 +23,11 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
         allowNull: false,
-    },
-    created_at: {
-        type: DataTypes.DATE,
-        allowNull: false,
     }
+    // created_at: {
+    //     type: DataTypes.DATE,
+    //     allowNull: false,
+    // }
   });
 
   Walk.associate = function(models) {
@@ -35,6 +35,7 @@ module.exports = function(sequelize, DataTypes) {
     // A Walk cannot be created without a User due to the foreign key contraint
     Walk.belongsTo(models.User, {
         foreignKey: {
+            name: "requestorID",
             allowNull: false
         }
     });

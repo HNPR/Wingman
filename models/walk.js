@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
     // A Walk cannot be created without a User due to the foreign key contraint
     Walk.belongsTo(models.User, {
         foreignKey: {
-            name: "requestorID",
+            name: "requesterID",
             allowNull: false
         }
     });

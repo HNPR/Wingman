@@ -8,12 +8,6 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// Set up PassportJS for OAuth
-const passport = require('passport');
-const auth = require('./config/passport');
-auth(passport);
-app.use(passport.initialize());
-
 // Set up cookies
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
@@ -23,6 +17,15 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000
 }));
 app.use(cookieParser());
+
+// Set up PassportJS for OAuth
+// =============================================================
+const passport = require('passport');
+const auth = require('./config/passport');
+auth(passport);
+app.use(passport.initialize());
+// Note: this is needed to pass around the req.user object while user is logged in
+app.use(passport.session());
 
 // Requiring our models for syncing
 var db = require("./models");

@@ -17,7 +17,7 @@ app.get("/api/walks", function(req, res) {
   app.get("/api/walks/:id", function(req, res) {
     db.Walk.findAll({
       where: {
-        id: req.params.user_id
+        id: req.params.id
       }
     }).then(function(dbWalk) {
       res.json(dbWalk);

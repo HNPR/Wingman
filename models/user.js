@@ -47,7 +47,7 @@ module.exports = function (sequelize, DataTypes) {
     User.hasMany(models.Walk, {
       onDelete: "cascade",
       foreignKey: {
-        name: "requestorID",
+        name: "requesterID",
         allowNull: false
       }
     });

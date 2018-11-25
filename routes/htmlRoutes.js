@@ -7,7 +7,6 @@
 const path = require("path");
 const passport = require('passport');
 
-
 // Routes
 // =============================================================
 module.exports = function (app) {
@@ -16,25 +15,20 @@ module.exports = function (app) {
 
   // route leads to landing/login page
   app.get("/", function (req, res) {
-    console.log("at /, printing req.user")
-    console.log(req.user);
-    if (req.session.token) {
-      console.log(req.session);
-      res.cookie('token', req.session.token);
-      res.cookie('displayName', req.session.displayName);
-      res.cookie('googleID', req.session.googleID);
-      res.cookie('profilePic', req.session.profilePic);
-      res.cookie('gender', req.session.gender);
+    // console.log("at /, printing req.user")
+    // console.log(req.user);
+    if (req.user) {
+      // res.cookie('token', req.session.token);
+      res.cookie('fullname', req.user.fullname);
+      res.cookie('googleID', req.user.googleID);
+      res.cookie('profilePhoto', req.user.profilePhoto);
+      res.cookie('gender', req.user.gender);
+      res.cookie('age', req.user.age);
+      res.cookie('emailAddress', req.user.emailAddress);
       res.sendFile(path.join(__dirname, "../public/html/walker-walkee.html"));
-      // res.json({
-      //   status: 'session cookie set'
-      // });
     } else {
       res.cookie('token', '');
       res.sendFile(path.join(__dirname, "../public/html/login2.html"));
-      // res.json({
-      //   status: 'session cookie not set'
-      // });
     }
   });
 
@@ -64,8 +58,9 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/html/aboutWingman.html"));
   });
 
+  // OAuth scopes for Google
   app.get('/auth/google', passport.authenticate('google', {
-    scope: ['https://www.googleapis.com/auth/userinfo.profile']
+    scope: ['https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']
   }));
 
   app.get('/auth/google/callback',
@@ -75,15 +70,8 @@ module.exports = function (app) {
     (req, res) => {
       console.log("at /auth/google/callback, printing req.user");
       console.log(req.user);
-      // console.log(req.user.profile.photos[0].value);
-      // console.log(`Google ID: ${req.user.profile.id}`)
-      // console.log(`Display Name: ${req.user.profile.displayName}`)
       req.session.token = req.user.token;
-      req.session.googleID = req.user.profile.id;
-      req.session.displayName = req.user.profile.displayName;
-      req.session.profilePic = req.user.profile.photos[0].value;
-      req.session.gender = req.user.profile.gender;
-      
+
       res.redirect('/');
     }
   );
@@ -101,6 +89,7 @@ module.exports = function (app) {
         expires: new Date(0)
       });
     }
+    
     res.redirect('/');
   });
 

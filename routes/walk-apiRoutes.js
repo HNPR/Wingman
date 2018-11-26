@@ -7,6 +7,7 @@ module.exports = function (app) {
     db.Walk.findAll({
       where: {
         completed: false
+        // TODO requesterID: not equal to currentID
       }
     }).then(function (dbWalk) {
       res.json(dbWalk);

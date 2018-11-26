@@ -25,32 +25,32 @@ module.exports = function (app) {
       res.cookie('gender', req.user.gender);
       res.cookie('age', req.user.age);
       res.cookie('emailAddress', req.user.emailAddress);
-      res.sendFile(path.join(__dirname, "../public/html/walker-walkee.html"));
+      res.sendFile(path.join(__dirname, "../public/html/profile.html"));
     } else {
       res.cookie('token', '');
-      res.sendFile(path.join(__dirname, "../public/html/login2.html"));
+      res.sendFile(path.join(__dirname, "../public/html/login.html"));
     }
   });
 
   // route leads to page where user can choose a requested walk to volunteer for
   app.get("/volunteer", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/grid.html"));
+    res.sendFile(path.join(__dirname, "../public/html/volunteer.html"));
   });
 
   // route leads to page where user can create profile without using Google
-  app.get("/new", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/walkerEntry.html"));
-  });
+  // app.get("/new", function (req, res) {
+    // res.sendFile(path.join(__dirname, "../public/html/walkerEntry.html"));
+  // });
 
   // route leads to user profile page
   // this route will need some additional info to have it correctly route to an individual user
   app.get("/profile", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/walker-walkee.html"));
+    res.sendFile(path.join(__dirname, "../public/html/profile.html"));
   });
 
   // route leads to page where user can create a new request for a walk
   app.get("/request", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/walk-request.html"));
+    res.sendFile(path.join(__dirname, "../public/html/walkRequest.html"));
   });
 
   // route leads to user profile page

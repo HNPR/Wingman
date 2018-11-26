@@ -46,6 +46,7 @@ module.exports = function (sequelize, DataTypes) {
     // When a user is deleted, also delete any associated walks
     User.hasMany(models.Walk, {
       onDelete: "cascade",
+      onUpdate: "cascade",
       foreignKey: {
         name: "requesterID",
         allowNull: false

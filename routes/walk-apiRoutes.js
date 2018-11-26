@@ -25,6 +25,18 @@ module.exports = function (app) {
     });
   });
 
+  // Get route for retrieving a single user's volunteered for walks
+  app.get("/api/walks/vol/:volunteerID", function (req, res) {
+    db.Walk.findAll({
+      where: {
+        volunteerID: req.params.volunteerID
+      }
+    }).then(function (dbWalk) {
+      res.json(dbWalk);
+    });
+  });
+
+
   // POST route for saving a new walk
   app.post("/api/walks", function (req, res) {
     db.Walk.create(req.body).then(function (dbWalk) {

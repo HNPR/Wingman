@@ -26,10 +26,10 @@ module.exports = function (app) {
   });
 
   // Get route for retrieving a single user's volunteered for walks
-  app.get("/api/walks/:volunteerID", function (req, res) {
+  app.get("/api/walks/vol/:volunteerID", function (req, res) {
     db.Walk.findAll({
       where: {
-        volunteerID: req.params.user_id
+        volunteerID: req.params.volunteerID
       }
     }).then(function (dbWalk) {
       res.json(dbWalk);

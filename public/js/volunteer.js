@@ -1,13 +1,7 @@
 $(document).ready(function() {
 // Getting references 
-// to the walker name input
-let walkerName = $(".requesterName");
-// the walk start location
-let startLocation = $(".startLocation");
-// the walk end location
-let endLocation = $(".endLocation");
-// the walk start time
-let startTime = $(".startTime");
+let requestList = $("tbody");
+let requestContainer = $(".ui.container.grid");
 
 // Adding event listener to the form to volunteer for a walk
 $(document).on("click", ".volunteer-button", handleVolunteer);
@@ -44,5 +38,26 @@ function handleVolunteer(event) {
 
 
 }
+
+// Function for rendering list of requested walks to the page
+function renderRequestList(rows) {
+    requestList.children().not(":last").remove();
+    requestContainer.children(".alert").remove();
+    if (rows.length) {
+      console.log(rows);
+      requestList.prepend(rows);
+    }
+    else {
+      renderEmpty();
+    }
+}
+
+ // Function for handling what to render when there are no requested walks
+ function renderEmpty() {
+    var alertDiv = $("<div>");
+    alertDiv.addClass("alert alert-danger");
+    alertDiv.text("There are currently no walks needing volunteers. Please check again later.");
+    sorryNoWalks.append(alertDiv);
+  }
 
 });

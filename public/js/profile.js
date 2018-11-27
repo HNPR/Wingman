@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    
+    var walkList = $("tbody");
+    var walkContainer = $("walkContainer");
+    
     // Using JS-Cookie to get the userID cookie
     const userID = Cookies.get('userID');
 
@@ -38,11 +42,25 @@ $(document).ready(function () {
             // TODO: Add rows of data from reqWalksData to profile page
             var rowsToAdd =[];
             for (var i = 0; i < reqWalksData.length; i++){
-                rowsToAdd.push(addWalkRow(data[i]));
+                rowsToAdd.push(addWalkRow(reqWalksData[i]));
             }
-            //renderWalkList(rowsToAdd);
+            renderWalkList(rowsToAdd);
 
         });
+    }
+
+    function renderWalkList(rows) {
+        walkList.children().not(":last").remove();
+        walkContainer.children(".alert").remove();
+        if (rows.length) {
+            console.log(rows);
+            walkList.prepend(rows);
+        }
+        else{
+            renderEmpty();
+        }
+
+
     }
 
     getUserReqWalks(userID);

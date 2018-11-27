@@ -14,6 +14,20 @@ $(document).ready(function () {
         });
     }
 
+    function addWalkRow(reqWalksData) {
+        var newTr = $("<tr>");
+        newTr.data("walk", reqWalksData);
+        newTr.append("<td>" + reqWalksData.startLocation + "</td>");
+        newTr.append("<td>" + reqWalksData.endLocation + "</td>");
+        newTr.append("<td>" + reqWalksData.startTime + "</td>");
+        newTr.append("<td>" + reqWalksData.completed + "</td>");
+        console.log(newTr);
+        return newTr; 
+        
+    }
+    
+    
+    
     // Invoke function to get user profile data
     getUserProfile(userID);
 
@@ -22,7 +36,12 @@ $(document).ready(function () {
         $.get("/api/walks/" + reqID, (reqWalksData) => {
             console.log(reqWalksData);
             // TODO: Add rows of data from reqWalksData to profile page
-            
+            var rowsToAdd =[];
+            for (var i = 0; i < reqWalksData.length; i++){
+                rowsToAdd.push(addWalkRow(data[i]));
+            }
+            //renderWalkList(rowsToAdd);
+
         });
     }
 

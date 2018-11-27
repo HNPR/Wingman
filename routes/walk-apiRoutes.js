@@ -1,15 +1,19 @@
 var db = require("../models");
+var Sequelize = require("sequelize");
 
 module.exports = function (app) {
 
   // GET route for getting all of the requested walks that are incomplete
-  app.get("/api/walks", function (req, res) {
+  app.get("/api/walks/incomp/:userID", function (req, res) {
     db.Walk.findAll({
       where: {
-        completed: false
-        // TODO requesterID: not equal to currentID
-      }
+        completed: false,
+        // requesterID is not equal to user ID so that current user's requests don't show up for them to volunteer
+        requesterID: {[Sequelize.Op.ne]: req.params.userID},
+        volunteerID: ""
+      }, include: [{model: db.User}]
     }).then(function (dbWalk) {
+      // console.log(dbWalk.Walk[0].dataValues[0].User)
       res.json(dbWalk);
     });
   });

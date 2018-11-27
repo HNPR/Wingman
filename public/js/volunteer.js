@@ -1,4 +1,20 @@
 $(document).ready(function() {
+
+// Using JS-Cookie to get the userID cookie
+const userID = Cookies.get('userID');
+
+// Function for retrieving requested walks and getting them ready to render to the page
+function getRequestedWalks(userID) {
+    $.get("/api/walks/incomp/" + userID, (walkData) => {
+        console.log(walkData);
+        let rowsToAdd = [];
+        for (let i=0; i<walkData.length; i++) {
+            rowsToAdd.push(createRequestRow(walkData[i]));
+        }
+        renderRequestList(rowsToAdd);
+    })
+}
+
 // Getting references 
 let requestList = $("tbody");
 let requestContainer = $(".ui.container.grid");
@@ -7,24 +23,15 @@ let requestContainer = $(".ui.container.grid");
 $(document).on("click", ".volunteer-button", handleVolunteer);
 
 // Get initial list of requested walks from database
-getRequestedWalks();
+getRequestedWalks(userID);
 
-// Function for retrieving requested walks and getting them ready to render to the page
-function getRequestedWalks() {
-    $.get("/api/walks", function(data) {
-        let rowsToAdd = [];
-        for (let i=0; i<data.length; i++) {
-            rowsToAdd.push(createRequestRow(data[i]));
-        }
-        renderRequestList(rowsToAdd);
-    })
-}
 
 // Function for creating a new row for a request
 function createRequestRow(requestData) {
+    // console.log(requestData);
     let newRow = $("<tr>");
     newRow.data("walk", requestData);
-    newRow.append("<td>" + requestData.fullname + "</td>");
+    newRow.append("<td>" + requestData.User.fullname + "</td>");
     newRow.append("<td>" + requestData.startLocation + "</td>");
     newRow.append("<td>" + requestData.endLocation + "</td>");
     newRow.append("<td>" + requestData.startTime + "</td>");

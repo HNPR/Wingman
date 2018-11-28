@@ -3,8 +3,17 @@ $(document).ready(function () {
     // Initiate date/time picker
     var today = new Date();
     $("#datetimePicker").calendar({
-        minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate()),
-        on: 'hover'
+        minDate: new Date(today.getFullYear(), today.getMonth(), today.getDate())
+    });
+
+    // Initialize modal
+    $('.ui.modal').modal({
+        onApprove: () => {
+            window.location.href = "/profile";
+        },
+        onHide: () => {
+            window.location.href = "/profile";
+        }
     });
 
     // Add autocomplete for map address provided by Google Maps API
@@ -32,7 +41,7 @@ $(document).ready(function () {
             alert("Please fill out all fields!");
             return;
         } else {
-            startTime = moment(startTime, 'MMMM Do, YYYY h:mm a').format("YYYY-MM-DD HH:mm:ss");
+            startTime = moment(startTime, "MMMM Do, YYYY h:mm a").format("YYYY-MM-DD HH:mm:ss");
             console.log(startLoc, endLoc, startTime);
             postReqWalk({
                 requesterID: userID,
@@ -48,7 +57,9 @@ $(document).ready(function () {
     // Function to get a single user profile
     function postReqWalk(reqWalkData) {
         $.post("/api/walks", reqWalkData, (postedWalk) => {
-            console.log(postedWalk);
+            let formattedTime = moment(postedWalk.startTime, "YYYY-MM-DD HH:mm:ss").format("MMMM Do, YYYY [at] h:mm a");
+            $('.modalDescription').html(`Requesting a walking from ${postedWalk.startLocation} to ${postedWalk.endLocation} on ${formattedTime}.`);
+            $('.ui.modal').modal('show');
         });
     }
 

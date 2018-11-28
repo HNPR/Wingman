@@ -58,7 +58,7 @@ $(document).ready(function () {
     function postReqWalk(reqWalkData) {
         $.post("/api/walks", reqWalkData, (postedWalk) => {
             let formattedTime = moment(postedWalk.startTime, "YYYY-MM-DD HH:mm:ss").format("MMMM Do, YYYY [at] h:mm a");
-            $('.modalDescription').html(`Requesting a walking from ${postedWalk.startLocation} to ${postedWalk.endLocation} on ${formattedTime}.`);
+            $('.modalDescription').html(`Requested a walk from ${postedWalk.startLocation} to ${postedWalk.endLocation} on ${formattedTime}.`);
             $('.ui.modal').modal('show');
         });
     }

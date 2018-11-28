@@ -46,12 +46,14 @@ $(document).ready(function() {
       .parent("td")
       .parent("tr")
       .data("walk");
-    let itemID = requestItemData.itemID;
-$ajax({
-method: ""
-})
-    .then(renderRequestList);
-    requestItemData.remove();
+      let rowData = $(this).parent("td").parent("tr");
+    let walkID = requestItemData.User.id;
+    $.ajax({
+      method: "PUT",
+      url: "/api/walks/" + walkID,
+      data: userID
+    }).then(rowData.remove());
+    
   }
 
   // Function for rendering list of requested walks to the page

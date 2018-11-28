@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no" name="viewport" />
+  <meta content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI." name="description" />
+  <meta content="Semantic-UI, Theme, Design, Template" name="keywords" />
+  <meta content="PPType" name="author" />
+  <meta content="#ffffff" name="theme-color" />
+  <link rel="icon" href="../images/Wingman.png">
+  <title>Wingman</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css"
+    rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFuSYxyRMfgywNZAV0-Y_wArkU7JZZSfY&libraries=places"></script>
+  <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="ui container" id="narrow">
+    <div class="ui borderless massive menu">
+      <div class="ui small image">
+        <svg width="75" height="75">
+          <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
+        </svg>
+      </div>
+
+      <a class="header item">Request a Wingman</a>
+
+      <div class="ui right secondary menu">
+        <a class="item" href="/profile">Profile</a>
+        <a class="item" href="/about">About Us</a>
+        <a class="item" href="/logout">Log Out</a>
+      </div>
+    </div>
+    <div class="ui basic segment">
+      <div class="ui container grid">
+        <div class="row">
+          <div class="column">
+            <h2 class="ui huge header">
+              Request a walk!
+            </h2>
+            <div class="ui divider"></div>
+            <p class="lead">
+              <div class="ui form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Start Location</label>
+                    <input placeholder="Start" type="text" id="startLocationTextField">
+                  </div>
+                  <div class="field">
+                    <label>End Location</label>
+                    <input placeholder="End" type="text" id="endLocationTextField">
+                  </div>
+                </div>
+                <div class="ui calendar field" id="datetimePicker">
+                  <label>Start Date/Time</label>
+                  <div class="ui input left icon">
+                    <i class="calendar icon"></i>
+                    <input type="text" name="time" placeholder="Date/Time" id="startTimeTextField">
+                  </div>
+                </div>
+
+                <div class="ui divider"></div>
+                <a class="ui yellow button walkSubmit">Submit</a>
+
+                <div class="ui modal">
+                  <!-- <i class="close icon"></i> -->
+                  <div class="header">
+                    Request Added!
+                  </div>
+                  <div class="image content">
+                    <!-- <i class="asterisk loading icon"></i> -->
+                    <div class="modalDescription">
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui button approve">OK</div>
+                  </div>
+                </div>
+
+                <style type="text/css">
+                  #narrow.ui.container {
+                    width: 50%;
+                  }
+
+                  #narrow.ui.container>.ui.menu {
+                    border-width: none;
+                    border-radius: 0;
+                    height: 4.5em;
+                    background-color: #619af4;
+                  }
+
+                  #narrow.ui.container>.ui.menu .header.item {
+                    padding-left: 0;
+                    font-size: 1.2em;
+                    color: gold;
+
+                  }
+
+                  #narrow.ui.container .secondary.menu .item {
+                    color: gold;
+
+                  }
+
+                  #narrow.ui.container .secondary.menu .item.active {
+                    background-color: gold;
+                    color: #619af4;
+                  }
+
+                  #narrow.ui.container .ui.message {
+                    background-color: rga(238, 238, 238);
+                    box-shadow: none;
+                    padding: 4em 2em;
+                    background-color: #619af4;
+
+                  }
+
+                  #narrow.ui.container h1.ui.header {
+                    font-size: 4.5em;
+                  }
+
+                  #narrow.ui.container p.lead {
+                    font-size: 1.3em;
+                    color: #333333;
+                    line-height: 1.4;
+                    font-weight: 300;
+                  }
+
+                  #narrow.ui.container .ui.grid .row {
+                    margin-bottom: 1.5em;
+                  }
+
+                  html {
+                    background-color: #619af4;
+                  }
+
+                  body {
+                    background-color: #619af4;
+                  }
+
+                  #ui.header.item {
+                    color: gold;
+                  }
+                </style>
+                <script src="../js/walkRequest.js"></script>
+
+</body>
+
+</html>

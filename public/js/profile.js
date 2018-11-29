@@ -2,6 +2,7 @@ $(document).ready(function () {
     
     var walkList = $("tbody");
     var walkContainer = $("walkContainer");
+    var volunteerWalk = $("volunteerwalk")
     
     // Using JS-Cookie to get the userID cookie
     const userID = Cookies.get('userID');
@@ -62,7 +63,7 @@ $(document).ready(function () {
     // Function that renders walks to table on profile
     function renderWalkList(rows) {
         walkList.children().not(":last").remove();
-        walkContainer.children(".alert").remove();
+        volunteerWalk.children(".alert").remove();
         if (rows.length) {
             console.log(rows);
             walkList.prepend(rows);

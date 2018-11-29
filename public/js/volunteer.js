@@ -51,13 +51,14 @@ $(document).ready(function() {
     let rowData = $(this)
       .parent("td")
       .parent("tr");
-    let walkID = requestItemData.User.id;
+    let walkID = requestItemData.id;
     $.ajax({
       method: "PUT",
       url: "/api/walks/" + walkID,
       data: {volunteerID: userID}
-    }).then(rowData.remove());
+    }).then(() => {
     $(".ui.modal").modal("show");
+  });
   }
 
   // Function for rendering list of requested walks to the page
@@ -87,11 +88,8 @@ $(document).ready(function() {
 
   // Initialize modal
   $(".ui.modal").modal({
-    onApprove: () => {
-      window.location.href = "/profile";
-    },
     onHide: () => {
-      window.location.href = "/volunteer";
+      window.location.href = "/profile";
     }
   });
 });

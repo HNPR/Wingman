@@ -46,14 +46,16 @@ $(document).ready(function() {
       .parent("td")
       .parent("tr")
       .data("walk");
-      let rowData = $(this).parent("td").parent("tr");
+    let rowData = $(this)
+      .parent("td")
+      .parent("tr");
     let walkID = requestItemData.User.id;
     $.ajax({
       method: "PUT",
       url: "/api/walks/" + walkID,
       data: userID
     }).then(rowData.remove());
-    $('.ui.modal').modal('show');
+    $(".ui.modal").modal("show");
   }
 
   // Function for rendering list of requested walks to the page
@@ -78,17 +80,16 @@ $(document).ready(function() {
     alertDiv.text(
       "There are currently no walks needing volunteers. Please check again later."
     );
-    sorryNoWalks.append(alertDiv);
+    $(".sorryNoWalks").append(alertDiv);
   }
 
   // Initialize modal
-  $('.ui.modal').modal({
+  $(".ui.modal").modal({
     onApprove: () => {
-        window.location.href = "/profile";
+      window.location.href = "/profile";
     },
     onHide: () => {
-        window.location.href = "/profile";
+      window.location.href = "/profile";
     }
-});
-
+  });
 });

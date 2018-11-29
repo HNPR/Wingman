@@ -1,0 +1,80 @@
+/* login page style start*/
+body {
+  background-color: #619af4;
+}
+body > .grid {
+  height: 100%;
+}
+.loginImage {
+  margin-top: -100px;
+  height: 150px;
+  margin: 20px;
+}
+.column {
+  max-width: 450px;
+}
+.content {
+  color: rgb(207, 233, 105);
+}
+.ui.image.header {
+  height: 50px;
+}
+/* login page style end */
+
+#narrow.ui.container {
+  width: 50%;
+}
+#narrow.ui.container > .ui.menu {
+  border-width: none;
+  border-radius: 0;
+  height: 4.5em;
+  background-color: #619af4;
+}
+#narrow.ui.container > .ui.menu .header.item {
+  padding-left: 0;
+  font-size: 1.2em;
+  color: gold;
+}
+#narrow.ui.container .secondary.menu .item {
+  color: gold;
+}
+#narrow.ui.container .secondary.menu .item.active {
+  background-color: gold;
+  color: #619af4;
+}
+#narrow.ui.container .ui.message {
+  background-color: rga(238, 238, 238);
+  box-shadow: none;
+  padding: 4em 2em;
+  background-color: #619af4;
+}
+#narrow.ui.container h1.ui.header {
+  font-size: 4.5em;
+}
+#narrow.ui.container p.lead {
+  font-size: 1.3em;
+  color: #333333;
+  line-height: 1.4;
+  font-weight: 300;
+}
+#narrow.ui.container .ui.grid .row {
+  margin-bottom: 1.5em;
+}
+
+html {
+  background-color: #619af4;
+}
+
+body {
+  background-color: #619af4;
+}
+
+#ui.header.item {
+  color: gold;
+}
+.ui.items {
+  padding-bottom: 1.5em;
+}
+.ui.items > .item > .content > .header:not(.ui) {
+  font-size: 2em;
+}

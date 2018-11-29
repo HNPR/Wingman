@@ -1,8 +1,9 @@
 $(document).ready(function () {
     
-    var walkList = $("tbody");
+    var walkList = $("#reqWalksTable");
     var walkContainer = $("walkContainer");
-    var volunteerWalk = $("volunteerwalk")
+    var volunteerWalk = $("reqVolunteerTable");
+    var volList = $("#reqVolunteerTable");
     
     // Using JS-Cookie to get the userID cookie
     const userID = Cookies.get('userID');
@@ -63,7 +64,7 @@ $(document).ready(function () {
     // Function that renders walks to table on profile
     function renderWalkList(rows) {
         walkList.children().not(":last").remove();
-        volunteerWalk.children(".alert").remove();
+        walkContainer.children(".alert").remove();
         if (rows.length) {
             console.log(rows);
             walkList.prepend(rows);
@@ -93,8 +94,8 @@ $(document).ready(function () {
     
     
     function renderVolWalkList(rows) {
-        walkList.children().not(":last").remove();
-        walkContainer.children(".alert").remove();
+        volList.children().not(":last").remove();
+        volunteerWalk.children(".alert").remove();
         if (rows.length) {
             console.log(rows);
             walkList.prepend(rows);
@@ -106,7 +107,7 @@ $(document).ready(function () {
 
     }
 
-    function addWalkRow(volWalksData) {
+    function addVolWalkRow(volWalksData) {
         var newTr = $("<tr>");
         newTr.data("walk", volWalksData);
         newTr.append("<td>" + volWalksData.startLocation + "</td>");
@@ -124,7 +125,7 @@ $(document).ready(function () {
             // TODO: Add rows of data from volWalksData to profile page
             var rowsToAdd =[];
             for (var i = 0; i < volWalksData.length; i++){
-                rowsToAdd.push(addWalkRow(volWalksData[i]));
+                rowsToAdd.push(addVolWalkRow(volWalksData[i]));
             }
             renderVolWalkList(rowsToAdd);
         });

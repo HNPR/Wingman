@@ -48,7 +48,7 @@ $(document).ready(function () {
 
         });
     }
-
+    // Function that renders walks to table on profile
     function renderWalkList(rows) {
         walkList.children().not(":last").remove();
         walkContainer.children(".alert").remove();
@@ -62,6 +62,8 @@ $(document).ready(function () {
 
 
     }
+
+    // Inserting function here to populate a volunteer table
 
     getUserReqWalks(userID);
 

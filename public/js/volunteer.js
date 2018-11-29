@@ -2,7 +2,6 @@ $(document).ready(function() {
   // Using JS-Cookie to get the userID cookie
   const userID = Cookies.get("userID");
 
-
   // Function for retrieving requested walks and getting them ready to render to the page
   function getRequestedWalks(userID) {
     $.get("/api/walks/incomp/" + userID, walkData => {
@@ -28,7 +27,10 @@ $(document).ready(function() {
   // Function for creating a new row for a request
   function createRequestRow(requestData) {
     // console.log(requestData);
-    let formattedTime = moment(requestData.startTime, "YYYY-MM-DD HH:mm:ss").format("MM-DD-YYYY [at] h:mm a");
+    let formattedTime = moment(
+      requestData.startTime,
+      "YYYY-MM-DD HH:mm:ss"
+    ).format("MM-DD-YYYY [at] h:mm a");
     let newRow = $("<tr>");
     newRow.data("walk", requestData);
     newRow.append("<td>" + requestData.User.fullname + "</td>");
@@ -55,10 +57,10 @@ $(document).ready(function() {
     $.ajax({
       method: "PUT",
       url: "/api/walks/" + walkID,
-      data: {volunteerID: userID}
+      data: { volunteerID: userID }
     }).then(() => {
-    $(".ui.modal").modal("show");
-  });
+      $(".ui.modal").modal("show");
+    });
   }
 
   // Function for rendering list of requested walks to the page

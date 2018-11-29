@@ -53,7 +53,7 @@ $(document).ready(function() {
       url: "/api/walks/" + walkID,
       data: userID
     }).then(rowData.remove());
-    
+    $('.ui.modal').modal('show');
   }
 
   // Function for rendering list of requested walks to the page
@@ -80,4 +80,15 @@ $(document).ready(function() {
     );
     sorryNoWalks.append(alertDiv);
   }
+
+  // Initialize modal
+  $('.ui.modal').modal({
+    onApprove: () => {
+        window.location.href = "/profile";
+    },
+    onHide: () => {
+        window.location.href = "/profile";
+    }
+});
+
 });

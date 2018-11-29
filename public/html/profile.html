@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="secondaryhtml">
 
 <head>
   <meta charset="utf-8" />
@@ -16,9 +16,10 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="secondarybody">
   <div class="ui container" id="narrow">
     <div class="ui borderless massive menu">
       <div class="ui small image">
@@ -30,18 +31,18 @@
       <a class="header item">Wingman Profile</a>
 
       <div class="ui right secondary menu">
-        <a class="active item" href="/profile">Profile</a>
+        <a class="ui disabled item" href="/profile">Profile</a>
         <a class="item" href="/about">About Us</a>
         <a class="item" href="/logout">Log Out</a>
       </div>
     </div>
-    <div class="ui message center aligned grid">
+    <div class="ui message center aligned grid profileIcon">
       <div class="ui small image">
         <svg width="125" height="125">
           <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
         </svg>
       </div>
-      <h1 class="ui huge header">
+      <h1 class="ui huge header profileHead">
         Your Profile
 
       </h1>
@@ -60,13 +61,13 @@
               <div class="description userFullName">John Doe</div>
             </div>
           </a>
-          <a class="item">
+          <!-- <a class="item">
             <i class="birthday cake icon"></i>
             <div class="content">
               <div class="header">Age</div>
               <div class="description userAge">25 Years old</div>
             </div>
-          </a>
+          </a> -->
           <div class="item">
             <i class="envelope outline icon"></i>
             <div class="content">
@@ -84,7 +85,7 @@
           </a>
         </div>
       </p>
-      <div class="ui container">
+      <div class="ui container profileButtons">
         <p>
           <a class="ui massive yellow button" href="/request">Request a Wingman</a>
           <a class="ui massive yellow button" href="/volunteer">Volunteer</a>
@@ -93,7 +94,10 @@
     </div>
 
     <div class="ui divider"></div>
-    Walks you have requested. 
+    <div class="ui container walkLists">
+        <h2 class="ui huge header profileWalks">
+            Walks you have requested
+          </h2> 
 
     <div class = walkContainer>
     <table class="ui celled table">
@@ -113,7 +117,9 @@
 
 
 <div class="ui divider"></div>
-Walks you have volunteered for. 
+<h2 class="ui huge header profileWalks">
+    Walks you have volunteered for
+  </h2>  
 <div class = volunteerWalk>
     <table class="ui celled table">
       <thead>
@@ -130,79 +136,15 @@ Walks you have volunteered for.
     </table>
 </div>
 
-
+</div>
 
   </div>
   <div class="ui divider"></div>
   <footer>
-    &copy; 2017 Wingman, Inc.
+    &copy; 2018 Wingman, Inc.
   </footer>
   </div>
-  <style type="text/css">
-    #narrow.ui.container {
-      width: 50%;
-
-    }
-
-    #narrow.ui.container>.ui.menu {
-      border-width: none;
-      border-radius: 0;
-      height: 4.5em;
-      background-color: #619af4;
-    }
-
-    #narrow.ui.container>.ui.menu .header.item {
-      padding-left: 0;
-      font-size: 1.2em;
-      color: gold;
-
-    }
-
-    #narrow.ui.container .secondary.menu .item {
-      color: gold;
-
-    }
-
-    #narrow.ui.container .secondary.menu .item.active {
-      background-color: gold;
-      color: #619af4;
-    }
-
-    #narrow.ui.container .ui.message {
-      background-color: rga(238, 238, 238);
-      box-shadow: none;
-      padding: 4em 2em;
-      background-color: #619af4;
-
-    }
-
-    #narrow.ui.container h1.ui.header {
-      font-size: 4.5em;
-    }
-
-    #narrow.ui.container p.lead {
-      font-size: 1.3em;
-      color: #333333;
-      line-height: 1.4;
-      font-weight: 300;
-    }
-
-    #narrow.ui.container .ui.grid .row {
-      margin-bottom: 1.5em;
-    }
-
-    html {
-      background-color: #619af4;
-    }
-
-    body {
-      background-color: #619af4;
-    }
-
-    #ui.header.item {
-      color: gold;
-    }
-  </style>
+ 
   <script src="../js/profile.js"></script>
 </body>
 

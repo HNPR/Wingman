@@ -143,5 +143,43 @@ body > .grid {
 .ui.large.label {
   margin-bottom: 10px;
 }
+.ui.huge.header {
+  color: rgb(207, 233, 105);
+}
 
+.ui.huge.header.profileWalks {
+  color: rgb(207, 233, 105);
+  text-align: center;
+  padding-top: 20px;
+}
+.ui.huge.header.profileHead {
+  color: rgb(207, 233, 105);
+  padding: 30px 14px;
+}
+.ui.yellow.button {
+  background-color: rgb(207, 233, 105);
+  color: black;
+}
+.ui.center.aligned.grid.profileIcon {
+  justify-content: inherit;
+}
+.ui.container.profileButtons {
+  margin: 20px auto;
+}
+.ui.container.walkLists {
+  background-color: #619af4;
+  margin: 0;
+}
+/* margin at very top of nav bar */
+.ui.container {
+  margin: 2rem auto;
+}
+.walkContainer {
+  width: 90%;
+  margin: 0 auto;
+}
+.volunteerWalk {
+  width: 90%;
+  margin: 0 auto;
+}
 /* content pages style end */

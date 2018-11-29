@@ -2,6 +2,7 @@ $(document).ready(function() {
   // Using JS-Cookie to get the userID cookie
   const userID = Cookies.get("userID");
 
+
   // Function for retrieving requested walks and getting them ready to render to the page
   function getRequestedWalks(userID) {
     $.get("/api/walks/incomp/" + userID, walkData => {
@@ -27,12 +28,13 @@ $(document).ready(function() {
   // Function for creating a new row for a request
   function createRequestRow(requestData) {
     // console.log(requestData);
+    let formattedTime = moment(requestData.startTime, "YYYY-MM-DD HH:mm:ss").format("MM-DD-YYYY [at] h:mm a");
     let newRow = $("<tr>");
     newRow.data("walk", requestData);
     newRow.append("<td>" + requestData.User.fullname + "</td>");
     newRow.append("<td>" + requestData.startLocation + "</td>");
     newRow.append("<td>" + requestData.endLocation + "</td>");
-    newRow.append("<td>" + requestData.startTime + "</td>");
+    newRow.append("<td>" + formattedTime + "</td>");
     newRow.append(
       "<td><button class='ui button volunteer-button'>Volunteer</button></td>"
     );

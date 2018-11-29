@@ -2,6 +2,9 @@
 body {
   background-color: #619af4;
 }
+html {
+  background-color: #619af4;
+}
 body > .grid {
   height: 100%;
 }
@@ -10,7 +13,7 @@ body > .grid {
   height: 150px;
   margin: 20px;
 }
-.column {
+.loginColumn {
   max-width: 450px;
 }
 .content {
@@ -20,61 +23,125 @@ body > .grid {
   height: 50px;
 }
 /* login page style end */
-
-#narrow.ui.container {
-  width: 50%;
+/* content pages style start */
+.ui.basic.segment {
+  background-color: #619af4;
 }
+
+.secondaryhtml {
+  background-image: url("../images/wings.jpg") no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.secondarybody {
+  background-image: url("../images/wings.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #narrow.ui.container > .ui.menu {
   border-width: none;
   border-radius: 0;
   height: 4.5em;
   background-color: #619af4;
 }
+
 #narrow.ui.container > .ui.menu .header.item {
   padding-left: 0;
   font-size: 1.2em;
-  color: gold;
+  color: rgb(207, 233, 105);
+  padding: 5px;
 }
+
 #narrow.ui.container .secondary.menu .item {
-  color: gold;
+  color: rgb(207, 233, 105);
 }
+
 #narrow.ui.container .secondary.menu .item.active {
-  background-color: gold;
+  background-color: rgb(207, 233, 105);
   color: #619af4;
 }
+
 #narrow.ui.container .ui.message {
-  background-color: rga(238, 238, 238);
   box-shadow: none;
   padding: 4em 2em;
   background-color: #619af4;
 }
+
 #narrow.ui.container h1.ui.header {
   font-size: 4.5em;
+  text-align: center;
+  color: rgb(207, 233, 105);
 }
+
 #narrow.ui.container p.lead {
   font-size: 1.3em;
   color: #333333;
   line-height: 1.4;
   font-weight: 300;
 }
+
 #narrow.ui.container .ui.grid .row {
   margin-bottom: 1.5em;
 }
 
-html {
-  background-color: #619af4;
-}
-
-body {
-  background-color: #619af4;
-}
-
 #ui.header.item {
-  color: gold;
+  color: rgb(207, 233, 105);
 }
+
 .ui.items {
   padding-bottom: 1.5em;
 }
+
 .ui.items > .item > .content > .header:not(.ui) {
   font-size: 2em;
 }
+
+.ui.button {
+  background-color: rgb(207, 233, 105);
+}
+
+#page-header h1 {
+  font-size: 2.5em;
+  color: rgb(207, 233, 105);
+  text-align: center;
+}
+#page-header p {
+  font-size: 1.4em;
+  color: rgb(207, 233, 105);
+  text-align: center;
+}
+
+.ui.container.grid {
+  margin-top: 2em;
+}
+
+.ui.container.grid p {
+  font-size: 1.2em;
+  overflow: hidden;
+}
+
+.ui.container.grid .ui.grid .column .volunteer {
+  background-color: lightblue;
+  border: solid 1px rgba(85, 61, 124, 0.2);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.uiHeader {
+  color: rgb(207, 233, 105);
+}
+
+.ui.celled.table {
+  text-align: center;
+  background-color: #6cacc2;
+}
+/* name label under about us images */
+.ui.large.label {
+  margin-bottom: 10px;
+}
+
+/* content pages style end */

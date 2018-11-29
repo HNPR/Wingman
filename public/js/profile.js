@@ -98,7 +98,7 @@ $(document).ready(function () {
         volunteerWalk.children(".alert").remove();
         if (rows.length) {
             console.log(rows);
-            walkList.prepend(rows);
+            volList.prepend(rows);
         }
         else{
             renderEmpty();

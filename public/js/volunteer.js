@@ -53,7 +53,7 @@ $(document).ready(function() {
     $.ajax({
       method: "PUT",
       url: "/api/walks/" + walkID,
-      data: userID
+      data: {volunteerID: userID}
     }).then(rowData.remove());
     $(".ui.modal").modal("show");
   }
@@ -89,7 +89,7 @@ $(document).ready(function() {
       window.location.href = "/profile";
     },
     onHide: () => {
-      window.location.href = "/profile";
+      window.location.href = "/volunteer";
     }
   });
 });

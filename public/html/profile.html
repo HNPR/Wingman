@@ -30,9 +30,9 @@
       <a class="header item">Wingman Profile</a>
 
       <div class="ui right secondary menu">
-          <a class="active item" href="/profile">Profile</a>
-          <a class="item" href="/about">About Us</a>
-          <a class="item" href="/logout">Log Out</a>
+        <a class="active item" href="/profile">Profile</a>
+        <a class="item" href="/about">About Us</a>
+        <a class="item" href="/logout">Log Out</a>
       </div>
     </div>
     <div class="ui message center aligned grid">
@@ -91,64 +91,52 @@
         </p>
       </div>
     </div>
-    <div class="ui two column grid">
-      <div class="column">
-        <div class="row">
-          <h2 class="ui header">
-            Subheading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-          </p>
-        </div>
-        <div class="row">
-          <h2 class="ui header">
-            Subheading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-          </p>
-        </div>
-        <div class="row">
-          <h2 class="ui header">
-            Subheading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-          </p>
-        </div>
-      </div>
-      <div class="column">
-        <div class="row">
-          <h2 class="ui header">
-            Subheading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-          </p>
-        </div>
-        <div class="row">
-          <h2 class="ui header">
-            Subheading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-          </p>
-        </div>
-        <div class="row">
-          <h2 class="ui header">
-            Subheading
-          </h2>
-          <p>
-            Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-          </p>
-        </div>
-      </div>
-    </div>
+
     <div class="ui divider"></div>
-    <footer>
-      &copy; 2017 Wingman, Inc.
-    </footer>
+    Walks you have requested. 
+
+    <div class = walkContainer>
+    <table class="ui celled table">
+      <thead>
+        <tr>
+          <th>Start Location</th>
+          <th>End Location</th>
+          <th>Start Time</th>
+          <th>Completed?</th>
+        </tr>
+      </thead>
+      <tbody id="reqWalksTable">
+        
+      </tbody>
+    </table>
+</div>
+
+
+<div class="ui divider"></div>
+Walks you have volunteered for. 
+<div class = volunteerWalk>
+    <table class="ui celled table">
+      <thead>
+        <tr>
+          <th>Start Location</th>
+          <th>End Location</th>
+          <th>Start Time</th>
+          <th>Completed?</th>
+        </tr>
+      </thead>
+      <tbody id="reqVolunteerTable">
+        
+      </tbody>
+    </table>
+</div>
+
+
+
+  </div>
+  <div class="ui divider"></div>
+  <footer>
+    &copy; 2017 Wingman, Inc.
+  </footer>
   </div>
   <style type="text/css">
     #narrow.ui.container {

@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    
+    var walkList = $("#reqWalksTable");
+    var walkContainer = $("walkContainer");
+    var volunteerWalk = $("reqVolunteerTable");
+    var volList = $("#reqVolunteerTable");
+    
     // Using JS-Cookie to get the userID cookie
     const userID = Cookies.get('userID');
 
@@ -14,25 +20,114 @@ $(document).ready(function () {
         });
     }
 
-    // Invoke function to get user profile data
-    getUserProfile(userID);
+    
+    
+    
+      // Invoke function to get user profile data
+      getUserProfile(userID);
 
+    
+   
+   
+   
+   
+   
+   
+      //SECTION TO SHOW REQUESTED WALKS 
+    
+    
+    function addWalkRow(reqWalksData) {
+        var newTr = $("<tr>");
+        newTr.data("walk", reqWalksData);
+        newTr.append("<td>" + reqWalksData.startLocation + "</td>");
+        newTr.append("<td>" + reqWalksData.endLocation + "</td>");
+        newTr.append("<td>" + reqWalksData.startTime + "</td>");
+        newTr.append("<td>" + reqWalksData.completed + "</td>");
+        console.log(newTr);
+        return newTr; 
+        
+    }
+    
     // Function to get current user's requested walks
     function getUserReqWalks(reqID) {
         $.get("/api/walks/" + reqID, (reqWalksData) => {
             console.log(reqWalksData);
             // TODO: Add rows of data from reqWalksData to profile page
-            
+            var rowsToAdd =[];
+            for (var i = 0; i < reqWalksData.length; i++){
+                rowsToAdd.push(addWalkRow(reqWalksData[i]));
+            }
+            renderWalkList(rowsToAdd);
+
         });
     }
+    // Function that renders walks to table on profile
+    function renderWalkList(rows) {
+        walkList.children().not(":last").remove();
+        walkContainer.children(".alert").remove();
+        if (rows.length) {
+            console.log(rows);
+            walkList.prepend(rows);
+        }
+        else{
+            renderEmpty();
+        }
+
+
+    }
+
+    // Inserting function here to populate a volunteer table
 
     getUserReqWalks(userID);
 
+
+
+
+
+    
+    
+    
+    // SECTION FOR SHOWING WALKS VOLUNTEERED FOR
+    
+    
+    
+    
+    
+    function renderVolWalkList(rows) {
+        volList.children().not(":last").remove();
+        volunteerWalk.children(".alert").remove();
+        if (rows.length) {
+            console.log(rows);
+            volList.prepend(rows);
+        }
+        else{
+            renderEmpty();
+        }
+
+
+    }
+
+    function addVolWalkRow(volWalksData) {
+        var newTr = $("<tr>");
+        newTr.data("walk", volWalksData);
+        newTr.append("<td>" + volWalksData.startLocation + "</td>");
+        newTr.append("<td>" + volWalksData.endLocation + "</td>");
+        newTr.append("<td>" + volWalksData.startTime + "</td>");
+        newTr.append("<td>" + volWalksData.completed + "</td>");
+        console.log(newTr);
+        return newTr; 
+        
+    }
     // Function to get current user's volunteered walks
     function getUserVolWalks(volID) {
         $.get("/api/walks/vol/" + volID, (volWalksData) => {
             console.log(volWalksData);
             // TODO: Add rows of data from volWalksData to profile page
+            var rowsToAdd =[];
+            for (var i = 0; i < volWalksData.length; i++){
+                rowsToAdd.push(addVolWalkRow(volWalksData[i]));
+            }
+            renderVolWalkList(rowsToAdd);
         });
     }
 

@@ -20,7 +20,7 @@ $(document).ready(function () {
         });
     }
 
-    
+   
     
     
       // Invoke function to get user profile data

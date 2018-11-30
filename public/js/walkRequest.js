@@ -48,8 +48,8 @@ $(document).ready(function () {
                 startLocation: startLoc,
                 endLocation: endLoc,
                 startTime: startTime,
-                completed: false,
-                volunteerID: ""
+                completed: false
+                // volunteerID: ""
             });
         }
     }

@@ -41,17 +41,17 @@ module.exports = function (sequelize, DataTypes) {
     // }
   });
 
-  User.associate = function (models) {
-    // Associating User with Walk
-    // When a user is deleted, also delete any associated walks
-    User.hasMany(models.Walk, {
-      onDelete: "cascade",
-      onUpdate: "cascade",
-      foreignKey: {
-        name: "requesterID",
-        allowNull: false
-      }
-    });
-  };
+  // User.associate = function (models) {
+  //   // Associating User with Walk
+  //   // When a user is deleted, also delete any associated walks
+  //   User.hasMany(models.Walk, {
+  //     onDelete: "cascade",
+  //     onUpdate: "cascade",
+  //     // foreignKey: {
+  //     //   name: "requesterID",
+  //     //   allowNull: false
+  //     // }
+  //   });
+  // };
   return User;
 };

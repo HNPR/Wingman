@@ -33,7 +33,7 @@ $(document).ready(function() {
     ).format("MM-DD-YYYY [at] h:mm a");
     let newRow = $("<tr>");
     newRow.data("walk", requestData);
-    newRow.append("<td>" + requestData.User.fullname + "</td>");
+    newRow.append("<td>" + requestData.requester.fullname + "</td>");
     newRow.append("<td>" + requestData.startLocation + "</td>");
     newRow.append("<td>" + requestData.endLocation + "</td>");
     newRow.append("<td>" + formattedTime + "</td>");

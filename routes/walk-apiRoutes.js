@@ -9,9 +9,9 @@ module.exports = function(app) {
         completed: false,
         // requesterID is not equal to user ID so that current user's requests don't show up for them to volunteer
         requesterID: { [Sequelize.Op.ne]: req.params.userID },
-        volunteerID: ""
+        volunteerID: null
       },
-      include: [{ model: db.User }]
+      include: [{ model: db.User, as: "requester" }]
     }).then(function(dbWalk) {
       res.json(dbWalk);
     });
@@ -22,7 +22,11 @@ module.exports = function(app) {
     db.Walk.findAll({
       where: {
         requesterID: req.params.requesterID
-      }
+      },
+      include :  [{
+        model: db.User,
+        as: 'volunteer'
+       }]
     }).then(function(dbWalk) {
       res.json(dbWalk);
     });

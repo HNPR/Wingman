@@ -10,6 +10,7 @@ $(document).ready(function () {
 
     // Click handlers for buttons
     $(document).on("click", ".markComplete-button", handleMarkComplete);
+    $(document).on("click", ".deleteRequest-button", handleDeleteRequest);
     $(document).on("click", ".unvolunteer-button", handleUnvolunteer);
 
     // Invoke function to get user profile data
@@ -66,10 +67,10 @@ $(document).ready(function () {
         newTr.append("<td>" + reqWalksData.endLocation + "</td>");
         newTr.append("<td>" + formattedTime + "</td>");
         newTr.append("<td>" + walkCompleted + "</td>");
+        newTr.append(`<td><button class='ui button deleteRequest-button'>Delete Request</button></td>`);
         newTr.attr("class", walkClass);
         return newTr;
     }
-
 
     // Function that renders walks to table on profile
     function renderWalkList(rows) {
@@ -82,7 +83,6 @@ $(document).ready(function () {
         }
     }
 
-
     // Function for rendering empty rows
     function renderEmpty(container, insertText) {
         var alertDiv = $("<div>");
@@ -93,6 +93,7 @@ $(document).ready(function () {
         container.append(alertDiv);
     }
 
+    // Handling the Mark Complete button
     function handleMarkComplete(event) {
         event.preventDefault();
         let requestItemData = $(this).parent("td").parent("tr").data("walk");
@@ -106,6 +107,24 @@ $(document).ready(function () {
         }).then(() => {
             // Change from Mark Complete button to Completed
             $(this).parent("td").html("Completed");
+        });
+    }
+
+    // Handling the Delete Request button
+    function handleDeleteRequest(event) {
+        event.preventDefault();
+        let requestItemData = $(this).parent("td").parent("tr").data("walk");
+        let rowData = $(this).parent("td").parent("tr");
+        let walkID = requestItemData.id;
+        $.ajax({
+            method: "DELETE",
+            url: "/api/walks/" + walkID
+            // data: {
+            //     completed: true
+            // }
+        }).then(() => {
+            // Delete row
+            rowData.remove();
         });
     }
 
@@ -161,6 +180,7 @@ $(document).ready(function () {
         return newTr;
     }
 
+    // Handling the Unvolunteer button
     function handleUnvolunteer(event) {
         event.preventDefault();
         let requestItemData = $(this).parent("td").parent("tr").data("walk");

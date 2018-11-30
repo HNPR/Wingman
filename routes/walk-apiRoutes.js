@@ -61,6 +61,9 @@ module.exports = function (app) {
 
   // PUT route for updating a single walk
   app.put("/api/walks/:walkID", function (req, res) {
+    // If volunteerID is set to an empty string, force it to be assigned to null
+    if (req.body.volunteerID == "")
+      req.body.volunteerID = null;
     db.Walk.update(req.body, {
       where: {
         id: req.params.walkID

@@ -8,6 +8,10 @@ $(document).ready(function () {
     // Using JS-Cookie to get the userID cookie
     const userID = Cookies.get('userID');
 
+    // Click handlers for buttons
+    $(document).on("click", ".markComplete-button", handleMarkComplete);
+    $(document).on("click", ".unvolunteer-button", handleUnvolunteer);
+
     // Invoke function to get user profile data
     getUserProfile(userID);
 
@@ -51,7 +55,7 @@ $(document).ready(function () {
             emailMailto = `<a href="mailto:${reqWalksData.volunteer.emailAddress}?Subject=Thanks for being a Wingman&Body=Thanks for being a Wingman for my walk on ${formattedTime} at ${reqWalksData.startLocation}!" target="_top">Say Hi!</a>`;
             volunteerName = reqWalksData.volunteer.fullname;
         }
-        const walkCompleted = reqWalksData.completed ? "Yes" : "No";
+        const walkCompleted = reqWalksData.completed ? "Completed" : "<button class='ui button markComplete-button'>Mark Complete</button>";
         const walkClass = reqWalksData.completed ? "walkComplete" : "walkIncomplete";
 
         var newTr = $("<tr>");
@@ -87,6 +91,22 @@ $(document).ready(function () {
             `There are currently no walks that ${insertText}.`
         );
         container.append(alertDiv);
+    }
+
+    function handleMarkComplete(event) {
+        event.preventDefault();
+        let requestItemData = $(this).parent("td").parent("tr").data("walk");
+        let walkID = requestItemData.id;
+        $.ajax({
+            method: "PUT",
+            url: "/api/walks/" + walkID,
+            data: {
+                completed: true
+            }
+        }).then(() => {
+            // Change from Mark Complete button to Completed
+            $(this).parent("td").html("Completed");
+        });
     }
 
     // SECTION FOR SHOWING WALKS VOLUNTEERED FOR
@@ -134,8 +154,27 @@ $(document).ready(function () {
         newTr.append("<td>" + volWalksData.endLocation + "</td>");
         newTr.append("<td>" + formattedTime + "</td>");
         newTr.append("<td>" + walkCompleted + "</td>");
+        newTr.append(
+            "<td><button class='ui button unvolunteer-button'>UnVolunteer</button></td>"
+        );
         newTr.attr("class", walkClass);
         return newTr;
+    }
+
+    function handleUnvolunteer(event) {
+        event.preventDefault();
+        let requestItemData = $(this).parent("td").parent("tr").data("walk");
+        let rowData = $(this).parent("td").parent("tr");
+        let walkID = requestItemData.id;
+        $.ajax({
+            method: "PUT",
+            url: "/api/walks/" + walkID,
+            data: {
+                volunteerID: null
+            }
+        }).then(() => {
+            rowData.remove();
+        });
     }
 
 });

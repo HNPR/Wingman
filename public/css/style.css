@@ -225,7 +225,7 @@ body > .grid {
   justify-content: inherit;
 }
 .ui.container.profileButtons {
-  margin: 20px auto;
+  margin: 20px 20px;
   justify-content: inherit;
 }
 .ui.container.walkLists {
@@ -254,6 +254,14 @@ body > .grid {
   font-family: "Oleo Script", cursive;
 }
 
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  text-align: center;
+}
 /* content pages style end */
 
 /* Extra small devices (phones, 600px and down) */
@@ -276,11 +284,52 @@ body > .grid {
   #narrow.ui.container .ui.message {
     padding: 2em 1em;
   }
+  .ui.container.walkLists {
+    padding: 5px;
+    margin: 0;
+  }
+  .ui.celled.table {
+    background-color: white;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  #narrow.ui.container h1.ui.header {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .ui.list {
+    width: 100%;
+    margin-left: 20%;
+  }
+  .ui.container.profileButtons {
+    text-align: center;
+    width: 100% !important;
+  }
+  .ui.yellow.button {
+    margin: 5px auto;
+  }
+  #narrow.ui.container .ui.message {
+    padding: 2em 1em;
+  }
+  .ui.container.walkLists {
+    padding: 5px;
+    margin: 0;
+  }
+  .ui.celled.table {
+    background-color: white;
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .ui.container.profileButtons {
+    text-align: center;
+    width: 100% !important;
+  }
+  .ui.list {
+    width: 100%;
+    margin-left: 40%;
+  }
 }

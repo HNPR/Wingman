@@ -14,6 +14,35 @@ body > .grid {
   height: 150px;
   margin: 20px;
 }
+
+@keyframes spin {
+  from{
+  transform: rotateY(0deg);
+  moz-transform: rotateY(0deg); 
+  ms-transform: rotateY(0deg); 
+  }
+  to{
+  transform: rotateY(360deg);
+  moz-transform: rotateY(360deg); 
+  ms-transform: rotateY(360deg); 
+  }
+     }
+     @-webkit-keyframes spin{
+  from{-webkit-transform: rotateY(0deg);}
+  to{-webkit-transform: rotateY(360deg);}
+     }
+     .loginImage{
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  -webkit-animation-name: spin;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 5s;
+     }
+
+
 .loginColumn {
   max-width: 450px;
 }
@@ -22,9 +51,13 @@ body > .grid {
 }
 .ui.image.header {
   height: 50px;
+  font-size: 40px;
+  font-family: 'Oleo Script', cursive;
 }
+
 /* login page style end */
 /* content pages style start */
+
 .ui.basic.segment {
   background-color: #619af4;
 }
@@ -41,6 +74,20 @@ body > .grid {
   background-image: url("../images/wings.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* dropdown nav */
+
+.navContent {
+color: rgb(207, 233, 105);
+display: inline;
+text-align: right;
+font-size: 20px;
+font-family: 'Raleway', sans-serif;
+}
+
+.ui.inline.dropdown {
+  align-content: right;
 }
 
 #narrow.ui.container > .ui.menu {
@@ -64,6 +111,7 @@ body > .grid {
 #narrow.ui.container .secondary.menu .item.active {
   background-color: rgb(207, 233, 105);
   color: #619af4;
+  display:block;
 }
 
 #narrow.ui.container .ui.message {
@@ -74,9 +122,12 @@ body > .grid {
 }
 
 #narrow.ui.container h1.ui.header {
-  font-size: 4.5em;
+  font-size: 3.0em;
   text-align: center;
   color: rgb(207, 233, 105);
+  font-family: 'Oleo Script', cursive;
+  margin-top: 1.0em;
+  
 }
 
 #narrow.ui.container p.lead {
@@ -104,7 +155,9 @@ body > .grid {
 
 .ui.button {
   background-color: rgb(207, 233, 105);
-  object-position: right;
+  object-position: center;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 #page-header h1 {
@@ -193,4 +246,6 @@ body > .grid {
   width: 90%;
   margin: 0 auto;
 }
+
+
 /* content pages style end */

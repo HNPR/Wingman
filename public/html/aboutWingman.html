@@ -25,13 +25,23 @@
           </div>
         
           
-        <a class="header item">Wingman</a> 
-        
-        <div class="ui right secondary menu">
-            <a class="item" href="/profile"><i class="user circle outline icon"></i>Profile</a>
-            <a class="item" href="/about"><i class="bell outline icon"></i>About</a>
-            <a class="item" href="/logout"><i class="paper plane outline icon"></i>Log Out</a>
-        </div>
+          <h4 class="ui header">
+    
+              <div class="navContent">
+                Menu
+                <div class="ui inline dropdown">
+                  <div class="text"></div>
+                  <i class="dropdown icon right"></i>
+                  <div class="menu">
+                    <div class="header"></div>
+                    <a class="item" data-text="profile" href="/profile"><i class="user circle outline icon"></i>Profile</a>
+                    <a class="ui disabled item" data-text="about" href="/about"><i class="bell outline icon"></i>About</a>
+                    <a class="item" data-text="logout" href="/logout"><i class="paper plane outline icon"></i>Logout</a>
+                  </div>
+                </div>
+              </div>
+            
+            </h4>
       </div>
 
 
@@ -47,7 +57,7 @@
             Ping
           </div>
           <p>
-            Project Lead and Backend Developer
+            Project Lead and Backend-Developer
           </p>
         </div>
         <div class="column">
@@ -57,9 +67,10 @@
             Nicole
           </div>
           <p>
-            Backend Developer and Project Coordinator
+            Backend-Developer and Project Coordinator
           </p>
         </div>
+        
         <div class="column">
           <img class="ui centered small circular image" src="../images/haley.png" />
           <div class="ui hidden divider"></div>
@@ -67,7 +78,7 @@
             Haley
           </div>
           <p>
-            Front End Developer and Semantic UI
+            Front-End Developer, Semantic UI, CSS
           </p>
         </div>
         <div class="column">
@@ -77,7 +88,7 @@
             Raynor
           </div>
           <p>
-            User Interface/Design and Logo 
+            Front-End Developer, Logo Design, and UI
           </p>
         </div>
       </div>
@@ -94,7 +105,7 @@
               Feel free to navigate around the site to both request and volunteer for additional walks as your schedule allows.
               Thanks for checking out Wingman and safe travels!</p>
               <br>
-              <p><i class="info circle icon"></i>All the information on this website is published in good faith and for general information purpose only. Wingman does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website, is strictly at your own risk. Wingman will not be liable for any losses and/or damages in connection with the use of our website.</p>
+              <p><i class="info circle icon"></i>All the information on this website is published in good faith and for general information purpose only. Wingman does not make any warranties about the completeness, reliability, or accuracy of this information. Any action you take upon the information you find on this website, is strictly at your own risk. Wingman will not be liable for any losses and/or damages in connection with the use of our website.</p>
             </div>
           </div>
         </div>
@@ -106,5 +117,11 @@
         &copy; 2018 Wingman, Inc.
       </footer>
     </div>
+
+<!-- // Nav dropdown toggle -->
+    <script>
+    $('.ui.dropdown')
+    .dropdown();
+    </script>
   </body>
 </html>

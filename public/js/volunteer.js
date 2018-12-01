@@ -95,3 +95,7 @@ $(document).ready(function() {
     }
   });
 });
+
+// Nav dropdown toggle
+$('.ui.dropdown')
+    .dropdown();

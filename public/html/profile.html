@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k="
     crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Raleway" rel="stylesheet">
 </head>
 
 <body class="secondarybody">
@@ -30,23 +31,32 @@
         </svg>
       </div>
 
-      <a class="header item">Wingman Profile</a>
-      <br>
-      <div class="ui right secondary menu">
-        <a class="ui disabled item" href="/profile"><i class="user circle outline icon"></i>Profile</a>
-        <a class="item" href="/about"><i class="bell outline icon"></i>About</a>
-        <a class="item" href="/logout"><i class="paper plane outline icon"></i>Log Out</a>
+<h4 class="ui header">
+    
+    <div class="navContent">
+      Menu
+      <div class="ui inline dropdown">
+        <div class="text"></div>
+        <i class="dropdown icon right"></i>
+        <div class="menu">
+          <div class="header"></div>
+          <a class="ui disabled item" data-text="profile" href="/profile"><i class="user circle outline icon"></i>Profile</a>
+          <a class="item" data-text="about" href="/about"><i class="bell outline icon"></i>About</a>
+          <a class="item" data-text="logout" href="/logout"><i class="paper plane outline icon"></i>Logout</a>
+        </div>
       </div>
+    </div> 
+  </h4>
     </div>
+
     <div class="ui message center aligned grid profileIcon">
       <div class="ui small image">
         <svg width="125" height="125">
           <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
         </svg>
       </div>
-      <h1 class="ui huge header profileHead">
-        Your Profile
-
+      <h1 class="ui medium header profileHead">
+        Your Wingman Profile
       </h1>
 
       <p class="lead">

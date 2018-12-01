@@ -33,6 +33,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Raleway" rel="stylesheet">
   </head>
 
   <body class="secondarybody">
@@ -50,13 +51,23 @@
           </svg>
         </div>
 
-        <a class="header item">Wingman Requests</a>
-
-        <div class="ui right secondary menu">
-            <a class="item" href="/profile"><i class="user circle outline icon"></i>Profile</a>
-            <a class="item" href="/about"><i class="bell outline icon"></i>About</a>
-            <a class="item" href="/logout"><i class="paper plane outline icon"></i>Log Out</a>
-        </div>
+        <h4 class="ui header">
+    
+            <div class="navContent">
+              Menu
+              <div class="ui inline dropdown">
+                <div class="text"></div>
+                <i class="dropdown icon right"></i>
+                <div class="menu">
+                  <div class="header"></div>
+                  <a class="item" data-text="profile" href="/profile"><i class="user circle outline icon"></i>Profile</a>
+                  <a class="item" data-text="about" href="/about"><i class="bell outline icon"></i>About</a>
+                  <a class="item" data-text="logout" href="/logout"><i class="paper plane outline icon"></i>Logout</a>
+                </div>
+              </div>
+            </div>
+          
+          </h4>
       </div>
 
       <div class="ui message center aligned grid">

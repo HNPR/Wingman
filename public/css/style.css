@@ -16,22 +16,26 @@ body > .grid {
 }
 
 @keyframes spin {
-  from{
-  transform: rotateY(0deg);
-  moz-transform: rotateY(0deg); 
-  ms-transform: rotateY(0deg); 
+  from {
+    transform: rotateY(0deg);
+    moz-transform: rotateY(0deg);
+    ms-transform: rotateY(0deg);
   }
-  to{
-  transform: rotateY(360deg);
-  moz-transform: rotateY(360deg); 
-  ms-transform: rotateY(360deg); 
+  to {
+    transform: rotateY(360deg);
+    moz-transform: rotateY(360deg);
+    ms-transform: rotateY(360deg);
   }
-     }
-     @-webkit-keyframes spin{
-  from{-webkit-transform: rotateY(0deg);}
-  to{-webkit-transform: rotateY(360deg);}
-     }
-     .loginImage{
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+.loginImage {
   animation-name: spin;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -40,20 +44,18 @@ body > .grid {
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-duration: 5s;
-     }
-
+}
 
 .loginColumn {
   max-width: 450px;
 }
-
 
 .ui.image.header {
   color: rgb(207, 233, 105);
   margin-bottom: 70px;
   margin-top: 50px;
   font-size: 40px;
-  font-family: 'Oleo Script', cursive;
+  font-family: "Oleo Script", cursive;
 }
 
 /* login page style end */
@@ -77,16 +79,14 @@ body > .grid {
   background-size: cover;
 }
 
-
-
 /* dropdown nav */
 
 #narrow.ui.container h4.ui.header {
-color: rgb(207, 233, 105);
-display: inline;
-text-align: right;
-font-size: 20px;
-font-family: 'Raleway', sans-serif;
+  color: rgb(207, 233, 105);
+  display: inline;
+  text-align: right;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
 }
 
 .ui.inline.dropdown {
@@ -114,7 +114,7 @@ font-family: 'Raleway', sans-serif;
 #narrow.ui.container .secondary.menu .item.active {
   background-color: rgb(207, 233, 105);
   color: #619af4;
-  display:block;
+  display: block;
 }
 
 #narrow.ui.container .ui.message {
@@ -125,12 +125,11 @@ font-family: 'Raleway', sans-serif;
 }
 
 #narrow.ui.container h1.ui.header {
-  font-size: 3.0em;
+  font-size: 3em;
   text-align: center;
   color: rgb(207, 233, 105);
-  font-family: 'Oleo Script', cursive;
-  margin-top: 1.0em;
-  
+  font-family: "Oleo Script", cursive;
+  margin-top: 1em;
 }
 
 #narrow.ui.container p.lead {
@@ -160,7 +159,7 @@ font-family: 'Raleway', sans-serif;
   background-color: rgb(207, 233, 105);
   object-position: center;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 #page-header h1 {
@@ -252,7 +251,36 @@ font-family: 'Raleway', sans-serif;
 
 /* about wingman */
 .ui.header.aboutHeader {
-  font-family: 'Oleo Script', cursive;
+  font-family: "Oleo Script", cursive;
 }
 
 /* content pages style end */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #narrow.ui.container h1.ui.header {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .ui.list {
+    width: 100%;
+    margin-left: 20%;
+  }
+  .ui.container.profileButtons {
+    text-align: center;
+  }
+  .ui.yellow.button {
+    margin: 5px auto;
+  }
+  #narrow.ui.container .ui.message {
+    padding: 2em 1em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}

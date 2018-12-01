@@ -60,6 +60,9 @@ body > .grid {
 
 /* login page style end */
 /* content pages style start */
+.modalDescription {
+  color: black;
+}
 
 .ui.basic.segment {
   background-color: #619af4;

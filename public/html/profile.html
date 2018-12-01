@@ -1,168 +1,181 @@
 <!DOCTYPE html>
 <html class="secondaryhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"
+      name="viewport"
+    />
+    <meta
+      content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI."
+      name="description"
+    />
+    <meta content="Semantic-UI, Theme, Design, Template" name="keywords" />
+    <meta content="PPType" name="author" />
+    <meta content="#ffffff" name="theme-color" />
+    <link rel="icon" href="../images/Wingman.png" />
+    <title>Wingman</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oleo+Script|Raleway"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"
+      integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-  <meta content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no" name="viewport" />
-  <meta content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI." name="description" />
-  <meta content="Semantic-UI, Theme, Design, Template" name="keywords" />
-  <meta content="PPType" name="author" />
-  <meta content="#ffffff" name="theme-color" />
-  <link rel="icon" href="../images/Wingman.png">
-  <title>Wingman</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-  <link rel="stylesheet" href="../css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k="
-    crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Raleway" rel="stylesheet">
-</head>
-
-<body class="secondarybody">
-  <div class="ui container" id="narrow">
-    <div class="ui borderless massive menu">
-      <div class="ui small image">
-        <svg width="75" height="75">
-          <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
-        </svg>
-      </div>
-
-<h4 class="ui header">
-    
-    <div class="navContent">
-      Menu
-      <div class="ui inline dropdown">
-        <div class="text"></div>
-        <i class="dropdown icon right"></i>
-        <div class="menu">
-          <div class="header"></div>
-          <a class="ui disabled item" data-text="profile" href="/profile"><i class="user circle outline icon"></i>Profile</a>
-          <a class="item" data-text="about" href="/about"><i class="bell outline icon"></i>About</a>
-          <a class="item" data-text="logout" href="/logout"><i class="paper plane outline icon"></i>Logout</a>
+  <body class="secondarybody">
+    <div class="ui container" id="narrow">
+      <div class="ui borderless massive menu">
+        <div class="ui small image">
+          <svg width="75" height="75">
+            <image
+              href="../images/Wingman.png"
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              class="logoImage"
+            ></image>
+          </svg>
         </div>
-      </div>
-    </div> 
-  </h4>
-    </div>
 
-    <div class="ui message center aligned grid profileIcon">
-      <div class="ui small image">
-        <svg width="125" height="125">
-          <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
-        </svg>
-      </div>
-      <h1 class="ui medium header profileHead">
-        Your Wingman Profile
-      </h1>
-
-      <p class="lead">
-        <div class="ui list">
-          <a class="item">
-            <div class="content">
-              <div class="description profilePhoto"><img src="" alt="Profile Photo"></div>
+        <h4 class="ui header">
+          Menu
+          <div class="ui inline dropdown">
+            <i class="dropdown icon right"></i>
+            <div class="menu">
+              <div class="header"></div>
+              <a class="ui disabled item" data-text="profile" href="/profile"
+                ><i class="user circle outline icon"></i>Profile</a
+              >
+              <a class="item" data-text="about" href="/about"
+                ><i class="bell outline icon"></i>About</a
+              >
+              <a class="item" data-text="walkRequest" href="/request"
+                ><i class="user plus icon"></i>Request a Wingman</a
+              >
+              <a class="item" data-text="volunteer" href="/volunteer"
+                ><i class="user icon"></i>Volunteer</a
+              >
+              <a class="item" data-text="logout" href="/logout"
+                ><i class="paper plane outline icon"></i>Logout</a
+              >
             </div>
-          </a>
-          <a class="item">
+          </div>
+        </h4>
+      </div>
+
+      <div class="ui message center aligned grid profileIcon">
+        <h1 class="ui medium header profileHead">Your Wingman Profile</h1>
+
+        <div class="ui list">
+          <div class="item">
+            <div class="content">
+              <div class="description profilePhoto">
+                <img class="profileImageHolder" src="" alt="profile image" />
+              </div>
+            </div>
+          </div>
+          <div class="item">
             <i class="address card outline icon"></i>
             <div class="content">
               <div class="header">Name</div>
               <div class="description userFullName">John Doe</div>
             </div>
-          </a>
+          </div>
           <div class="item">
             <i class="envelope outline icon"></i>
             <div class="content">
               <div class="header">Email</div>
-              <div class="description userEmail">WingmanEmail@Placeholder.com</div>
+              <div class="description userEmail">
+                WingmanEmail@Placeholder.com
+              </div>
             </div>
-
           </div>
-          <a class="item">
+          <div class="item">
             <i class="transgender alternate icon"></i>
             <div class="content">
               <div class="header">Gender</div>
               <div class="description userGender">Male/Female/Non-Binary</div>
             </div>
-          </a>
+          </div>
         </div>
-      </p>
 
-      <div class="ui container profileButtons">
-        <p>
-
-          <a class="ui huge yellow button" href="/request"><i class="user plus icon"></i>
-            Request a Wingman
-          </a>
-          <a class="ui huge yellow button" href="/volunteer"><i class="user icon"></i>
-            Volunteer
-          </a>
-        </p>
+        <div class="ui container profileButtons">
+          <p>
+            <a class="ui huge yellow button" href="/request"
+              ><i class="user plus icon"></i> Request a Wingman
+            </a>
+            <a class="ui huge yellow button" href="/volunteer"
+              ><i class="user icon"></i> Volunteer
+            </a>
+          </p>
+        </div>
       </div>
-    </div>
-
-
-    <div class="ui divider"></div>
-    <div class="ui container walkLists">
-      <h2 class="ui huge header profileWalks">
-        Walks you have requested
-      </h2>
-
-      <div class=walkContainer>
-        <table class="ui celled table">
-          <thead>
-            <tr>
-              <th>Volunteer</th>
-              <th>Email</th>
-              <th>Start Location</th>
-              <th>End Location</th>
-              <th>Start Time</th>
-              <th>Completed?</th>
-            </tr>
-          </thead>
-          <tbody id="reqWalksTable">
-
-          </tbody>
-        </table>
-      </div>
-
 
       <div class="ui divider"></div>
-      <h2 class="ui huge header profileWalks">
-        Walks you have volunteered for
-      </h2>
-      <div class=volunteerWalk>
-        <table class="ui celled table">
-          <thead>
-            <tr>
-              <th>Requester</th>
-              <th>Email</th>
-              <th>Start Location</th>
-              <th>End Location</th>
-              <th>Start Time</th>
-              <th>Completed?</th>
-            </tr>
-          </thead>
-          <tbody id="reqVolunteerTable">
+      <div class="ui container walkLists">
+        <h2 class="ui huge header profileWalks">Walks you have requested</h2>
 
-          </tbody>
-        </table>
+        <div class="walkContainer">
+          <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>Volunteer</th>
+                <th>Email</th>
+                <th>Start Location</th>
+                <th>End Location</th>
+                <th>Start Time</th>
+                <th>Completed?</th>
+                <th>Cancel Request</th>
+              </tr>
+            </thead>
+            <tbody id="reqWalksTable"></tbody>
+          </table>
+        </div>
+
+        <div class="ui divider"></div>
+        <h2 class="ui huge header profileWalks">
+          Walks you have volunteered for
+        </h2>
+        <div class="volunteerWalk">
+          <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>Requester</th>
+                <th>Email</th>
+                <th>Start Location</th>
+                <th>End Location</th>
+                <th>Start Time</th>
+                <th>Completed?</th>
+                <th>Cancel Volunteer</th>
+              </tr>
+            </thead>
+            <tbody id="reqVolunteerTable"></tbody>
+          </table>
+        </div>
       </div>
-
     </div>
 
-  </div>
+    <div class="ui divider"></div>
+    <footer>&copy; 2018 Wingman, Inc.</footer>
 
-  <div class="ui divider"></div>
-  <footer>
-    &copy; 2018 Wingman, Inc.
-  </footer>
-  </div>
-
-  <script src="../js/profile.js"></script>
-</body>
-
+    <script src="../js/profile.js"></script>
+  </body>
 </html>

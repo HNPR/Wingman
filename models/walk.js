@@ -4,9 +4,9 @@ module.exports = function(sequelize, DataTypes) {
     //     type: DataTypes.STRING,
     //     allowNull: false,
     // },
-    volunteerID: {
-        type: DataTypes.STRING,
-    },
+    // volunteerID: {
+    //     type: DataTypes.STRING,
+    // },
     startLocation: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -33,12 +33,20 @@ module.exports = function(sequelize, DataTypes) {
   Walk.associate = function(models) {
     // This says that a walk should belong to a User
     // A Walk cannot be created without a User due to the foreign key contraint
-    Walk.belongsTo(models.User, {
-        foreignKey: {
-            name: "requesterID",
-            allowNull: false
-        }
-    });
+    Walk.belongsTo(models.User, {as: "requester", foreignKey: "requesterID"});
+    Walk.belongsTo(models.User, {as: "volunteer", foreignKey: "volunteerID"});
+    // Walk.belongsTo(models.User, {foreignKey: "requesterID"});
+    // Walk.belongsTo(models.User, {foreignKey: "volunteerID"});
+    // Walk.belongsTo(models.User, {
+    //     foreignKey: {
+    //         name: "requesterID",
+    //         allowNull: false
+    //     },
+    //     foreignKey: {
+    //         name: "volunteerID",
+    //         allowNull: true
+    //     }
+    // });
   };
   return Walk;
 };

@@ -17,14 +17,59 @@ $(document).ready(function () {
     });
 
     // Add autocomplete for map address provided by Google Maps API
-    function init() {
+    function initMap() {
         const input1 = document.getElementById('startLocationTextField');
         const input2 = document.getElementById('endLocationTextField');
         var autocomplete1 = new google.maps.places.Autocomplete(input1);
         var autocomplete2 = new google.maps.places.Autocomplete(input2);
+
+        let map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 30.2859667,
+                lng: -97.73606
+            },
+            zoom: 14,
+            disableDefaultUI: true
+        });
+
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(map);
+
+        var onChangeHandler = function () {
+            var place1 = autocomplete1.getPlace() || false;
+            var place2 = autocomplete2.getPlace() || false;
+
+            if (place1.geometry && place2.geometry) {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            } else if (place1.geometry) {
+                map.setCenter(place1.geometry.location);
+                map.setZoom(17);
+            } else if (place2.geometry) {
+                map.setCenter(place2.geometry.location);
+                map.setZoom(17);
+            }
+        };
+        autocomplete1.addListener('place_changed', onChangeHandler);
+        autocomplete2.addListener('place_changed', onChangeHandler);        
+
     }
 
-    google.maps.event.addDomListener(window, 'load', init);
+    google.maps.event.addDomListener(window, 'load', initMap);
+
+    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route({
+            origin: document.getElementById('startLocationTextField').value,
+            destination: document.getElementById('endLocationTextField').value,
+            travelMode: 'WALKING'
+        }, function (response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+            } else {
+                console.log('Directions request failed due to ' + status);
+            }
+        });
+    }
 
     // Using JS-Cookie to get the userID cookie
     const userID = Cookies.get('userID');
@@ -48,8 +93,8 @@ $(document).ready(function () {
                 startLocation: startLoc,
                 endLocation: endLoc,
                 startTime: startTime,
-                completed: false,
-                volunteerID: ""
+                completed: false
+                // volunteerID: ""
             });
         }
     }
@@ -64,3 +109,7 @@ $(document).ready(function () {
     }
 
 });
+
+// Nav dropdown toggle
+$('.ui.dropdown')
+    .dropdown();

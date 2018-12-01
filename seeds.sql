@@ -17,7 +17,7 @@ INSERT INTO walks (requesterID, volunteerID, startLocation, endLocation, startTi
 VALUES (1, 2,"","" ,'2019-05-10 10:30:00', false, '1000-01-01 00:00:00', '1000-01-01 00:00:00');
 
 INSERT INTO walks (requesterID, volunteerID, startLocation, endLocation, startTime, completed, createdAt, updatedAt)
-VALUES (2, 4,"","",'2019-05-18 09:15:00', false, '1000-01-01 00:00:00', '1000-01-01 00:00:00');
+VALUES (2,null,"","",'2019-05-18 09:15:00', false, '1000-01-01 00:00:00', '1000-01-01 00:00:00');
 
 INSERT INTO walks (requesterID, volunteerID, startLocation, endLocation, startTime, completed, createdAt, updatedAt)
 VALUES (2, 3,"","",'2019-05-20 11:00:00', false, '1000-01-01 00:00:00', '1000-01-01 00:00:00');
@@ -26,4 +26,4 @@ INSERT INTO walks (requesterID, volunteerID, startLocation, endLocation, startTi
 VALUES (3, 5,"","",'2019-05-01 05:45:00', false, '1000-01-01 00:00:00', '1000-01-01 00:00:00');
 
 INSERT INTO walks (requesterID, volunteerID, startLocation, endLocation, startTime, completed, createdAt, updatedAt)
-VALUES (4, 5,"","",'2019-05-05 03:30:00', false, '1000-01-01 00:00:00', '1000-01-01 00:00:00');
+VALUES (4,null,"","",'2019-05-05 03:30:00', false, '1000-01-01 00:00:00', '1000-01-01 00:00:00');

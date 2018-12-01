@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html class="secondaryhtml">
 
 <head>
   <meta charset="utf-8" />
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no" name="viewport" />
-  <meta content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI." name="description" />
-  <meta content="Semantic-UI, Theme, Design, Template" name="keywords" />
-  <meta content="PPType" name="author" />
-  <meta content="#ffffff" name="theme-color" />
+  <meta content="Wingman App" name="description" />
+  <meta content="Wingman App" name="keywords" />
+  <meta content="HNPR" name="author" />
   <link rel="icon" href="../images/Wingman.png">
   <title>Wingman</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
@@ -22,25 +21,39 @@
   <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k="
     crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Raleway" rel="stylesheet">
 </head>
 
-<body>
+<body class="secondarybody">
   <div class="ui container" id="narrow">
     <div class="ui borderless massive menu">
       <div class="ui small image">
         <svg width="75" height="75">
-          <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
+          <a href="/profile">
+            <image xlink:href="../images/Wingman.png" x="0" y="0" width="100%" height="100%"></image>
+          </a>
         </svg>
       </div>
 
-      <a class="header item">Request a Wingman</a>
-
-      <div class="ui right secondary menu">
-        <a class="item" href="/profile">Profile</a>
-        <a class="item" href="/about">About Us</a>
-        <a class="item" href="/logout">Log Out</a>
-      </div>
+      <h4 class="ui header">
+    
+          <div class="navContent">
+            
+            <div class="ui inline dropdown">
+              
+              <i class="align justify icon"></i>
+              <div class="menu">
+                <div class="header"></div>
+                <a class="item" data-text="profile" href="/profile"><i class="user circle outline icon"></i>Profile</a>
+                <a class="item" data-text="about" href="/about"><i class="bell outline icon"></i>About</a>
+                <a class="ui disabled item" data-text="walkRequest" href="/request"><i class="user plus icon"></i>Request a Wingman</a>
+                <a class="item" data-text="volunteer" href="/volunteer"><i class="user icon"></i>Volunteer</a>
+                <a class="item" data-text="logout" href="/logout"><i class="paper plane outline icon"></i>Logout</a>
+              </div>
+            </div>
+          </div> 
+        </h4>
     </div>
     <div class="ui basic segment">
       <div class="ui container grid">
@@ -62,6 +75,7 @@
                     <input placeholder="End" type="text" id="endLocationTextField">
                   </div>
                 </div>
+                <div id="map" style="height:300px"></div>
                 <div class="ui calendar field" id="datetimePicker">
                   <label>Start Date/Time</label>
                   <div class="ui input left icon">
@@ -87,72 +101,13 @@
                     <div class="ui button approve">OK</div>
                   </div>
                 </div>
-
-                <style type="text/css">
-                  #narrow.ui.container {
-                    width: 50%;
-                  }
-
-                  #narrow.ui.container>.ui.menu {
-                    border-width: none;
-                    border-radius: 0;
-                    height: 4.5em;
-                    background-color: #619af4;
-                  }
-
-                  #narrow.ui.container>.ui.menu .header.item {
-                    padding-left: 0;
-                    font-size: 1.2em;
-                    color: gold;
-
-                  }
-
-                  #narrow.ui.container .secondary.menu .item {
-                    color: gold;
-
-                  }
-
-                  #narrow.ui.container .secondary.menu .item.active {
-                    background-color: gold;
-                    color: #619af4;
-                  }
-
-                  #narrow.ui.container .ui.message {
-                    background-color: rga(238, 238, 238);
-                    box-shadow: none;
-                    padding: 4em 2em;
-                    background-color: #619af4;
-
-                  }
-
-                  #narrow.ui.container h1.ui.header {
-                    font-size: 4.5em;
-                  }
-
-                  #narrow.ui.container p.lead {
-                    font-size: 1.3em;
-                    color: #333333;
-                    line-height: 1.4;
-                    font-weight: 300;
-                  }
-
-                  #narrow.ui.container .ui.grid .row {
-                    margin-bottom: 1.5em;
-                  }
-
-                  html {
-                    background-color: #619af4;
-                  }
-
-                  body {
-                    background-color: #619af4;
-                  }
-
-                  #ui.header.item {
-                    color: gold;
-                  }
-                </style>
+                <div class="ui divider"></div>
+                <footer>
+                  &copy; 2018 Wingman, Inc.
+                </footer>
+                </div>
                 <script src="../js/walkRequest.js"></script>
+
 
 </body>
 

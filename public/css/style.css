@@ -60,6 +60,9 @@ body > .grid {
 
 /* login page style end */
 /* content pages style start */
+.modalDescription {
+  color: black;
+}
 
 .ui.basic.segment {
   background-color: #619af4;
@@ -172,7 +175,6 @@ body > .grid {
   color: rgb(207, 233, 105);
   text-align: center;
 }
-
 .ui.container.grid {
   margin-top: 2em;
 }
@@ -181,14 +183,12 @@ body > .grid {
   font-size: 1.2em;
   overflow: hidden;
 }
-
 .ui.container.grid .ui.grid .column .volunteer {
   background-color: lightblue;
   border: solid 1px rgba(85, 61, 124, 0.2);
   margin-top: 1em;
   margin-bottom: 1em;
 }
-
 .uiHeader {
   color: rgb(207, 233, 105);
 }
@@ -204,14 +204,14 @@ body > .grid {
 }
 .ui.huge.header {
   color: rgb(207, 233, 105);
+  font-family: "Oleo Script", cursive;
+  font-size: 36px;
 }
-
 .ui.huge.header.profileWalks {
   color: rgb(207, 233, 105);
   text-align: center;
   padding-top: 20px;
 }
-
 .ui.huge.header.profileHead {
   color: rgb(207, 233, 105);
   padding: 30px 14px;
@@ -225,7 +225,7 @@ body > .grid {
   justify-content: inherit;
 }
 .ui.container.profileButtons {
-  margin: 20px 20px;
+  margin: 5px;
   justify-content: inherit;
 }
 .ui.container.walkLists {
@@ -262,6 +262,21 @@ nav,
 section {
   text-align: center;
 }
+.ui.list {
+  column-count: 2;
+  padding-right: 50%;
+  padding-left: 10%;
+}
+.profileImageHolder {
+  height: 150px;
+  width: auto;
+}
+.ui.list .list > .item:first-child,
+.ui.list > .item:first-child,
+ol.ui.list li:first-child,
+ul.ui.list li:first-child {
+  margin: 5px;
+}
 /* content pages style end */
 
 /* Extra small devices (phones, 600px and down) */
@@ -273,7 +288,10 @@ section {
   }
   .ui.list {
     width: 100%;
-    margin-left: 20%;
+    padding-right: 25%;
+    padding-left: 26%;
+    column-count: 1;
+    margin: 5% auto;
   }
   .ui.container.profileButtons {
     text-align: center;
@@ -290,6 +308,12 @@ section {
   }
   .ui.celled.table {
     background-color: white;
+  }
+  .ui.button.unvolunteer-button {
+    background-color: rgb(241, 79, 79);
+  }
+  .ui.button.deleteRequest-button {
+    background-color: rgb(241, 79, 79);
   }
 }
 
@@ -302,7 +326,9 @@ section {
   }
   .ui.list {
     width: 100%;
-    margin-left: 20%;
+    margin-left: 9%;
+    padding-right: 25%;
+    padding-left: 10%;
   }
   .ui.container.profileButtons {
     text-align: center;
@@ -321,6 +347,15 @@ section {
   .ui.celled.table {
     background-color: white;
   }
+  .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+    margin-right: 0;
+  }
+  .ui.button.unvolunteer-button {
+    background-color: rgb(241, 79, 79);
+  }
+  .ui.button.deleteRequest-button {
+    background-color: rgb(241, 79, 79);
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -330,6 +365,26 @@ section {
   }
   .ui.list {
     width: 100%;
-    margin-left: 40%;
+    margin-left: 15%;
+    padding-right: 35%;
+    padding-left: 10%;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .ui.list {
+    width: 100%;
+    margin-left: 20%;
+    padding-right: 35%;
+    padding-left: 10%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .ui.list {
+    width: 100%;
+    margin-left: 25%;
+    padding-right: 35%;
+    padding-left: 10%;
   }
 }

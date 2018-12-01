@@ -23,7 +23,7 @@ $(document).ready(function () {
             $(".userAge").html(userData.age);
             $(".userEmail").html(userData.emailAddress);
             $(".userGender").html(userData.gender);
-            $(".profilePhoto img").attr("src", userData.profilePhoto);
+            $(".profilePhoto img").attr("src", userData.profilePhoto + "0");
         });
     }
 

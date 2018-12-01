@@ -11,7 +11,7 @@ body > .grid {
 
 .loginImage {
   margin-top: -100px;
-  height: 150px;
+  height: 200px;
   margin: 20px;
 }
 
@@ -46,11 +46,12 @@ body > .grid {
 .loginColumn {
   max-width: 450px;
 }
-.content {
-  color: rgb(207, 233, 105);
-}
+
+
 .ui.image.header {
-  height: 50px;
+  color: rgb(207, 233, 105);
+  margin-bottom: 70px;
+  margin-top: 50px;
   font-size: 40px;
   font-family: 'Oleo Script', cursive;
 }
@@ -77,9 +78,10 @@ body > .grid {
 }
 
 
+
 /* dropdown nav */
 
-.navContent {
+#narrow.ui.container h4.ui.header {
 color: rgb(207, 233, 105);
 display: inline;
 text-align: right;

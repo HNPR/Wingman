@@ -180,6 +180,11 @@ $(document).ready(function () {
         return newTr;
     }
 
+
+
+  // Nav dropdown toggle
+  $('.ui.dropdown')
+  .dropdown();
     // Handling the Unvolunteer button
     function handleUnvolunteer(event) {
         event.preventDefault();

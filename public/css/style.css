@@ -247,5 +247,9 @@ font-family: 'Raleway', sans-serif;
   margin: 0 auto;
 }
 
+/* about wingman */
+.ui.header.aboutHeader {
+  font-family: 'Oleo Script', cursive;
+}
 
 /* content pages style end */

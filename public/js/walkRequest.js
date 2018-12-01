@@ -37,10 +37,22 @@ $(document).ready(function () {
         directionsDisplay.setMap(map);
 
         var onChangeHandler = function () {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
+            var place1 = autocomplete1.getPlace() || false;
+            var place2 = autocomplete2.getPlace() || false;
+
+            if (place1.geometry && place2.geometry) {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            } else if (place1.geometry) {
+                map.setCenter(place1.geometry.location);
+                map.setZoom(17);
+            } else if (place2.geometry) {
+                map.setCenter(place2.geometry.location);
+                map.setZoom(17);
+            }
         };
         autocomplete1.addListener('place_changed', onChangeHandler);
-        autocomplete2.addListener('place_changed', onChangeHandler);
+        autocomplete2.addListener('place_changed', onChangeHandler);        
+
     }
 
     google.maps.event.addDomListener(window, 'load', initMap);

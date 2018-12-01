@@ -56,7 +56,7 @@ $(document).ready(function () {
             emailMailto = `<a href="mailto:${reqWalksData.volunteer.emailAddress}?Subject=Thanks for being a Wingman&Body=Thanks for being a Wingman for my walk on ${formattedTime} at ${reqWalksData.startLocation}!" target="_top">Say Hi!</a>`;
             volunteerName = reqWalksData.volunteer.fullname;
         }
-        const walkCompleted = reqWalksData.completed ? "Completed" : "<button class='ui button markComplete-button'>Mark Complete</button>";
+        const walkCompleted = reqWalksData.completed ? "Completed" : "<button class='ui button markComplete-button'><i class='check icon'></i></button>";
         const walkClass = reqWalksData.completed ? "walkComplete" : "walkIncomplete";
 
         var newTr = $("<tr>");
@@ -67,7 +67,7 @@ $(document).ready(function () {
         newTr.append("<td>" + reqWalksData.endLocation + "</td>");
         newTr.append("<td>" + formattedTime + "</td>");
         newTr.append("<td>" + walkCompleted + "</td>");
-        newTr.append(`<td><button class='ui button deleteRequest-button'>Delete Request</button></td>`);
+        newTr.append(`<td><button class='ui button deleteRequest-button'>X</button></td>`);
         newTr.attr("class", walkClass);
         return newTr;
     }
@@ -174,7 +174,7 @@ $(document).ready(function () {
         newTr.append("<td>" + formattedTime + "</td>");
         newTr.append("<td>" + walkCompleted + "</td>");
         newTr.append(
-            "<td><button class='ui button unvolunteer-button'>UnVolunteer</button></td>"
+            "<td><button class='ui button unvolunteer-button'>X</button></td>"
         );
         newTr.attr("class", walkClass);
         return newTr;

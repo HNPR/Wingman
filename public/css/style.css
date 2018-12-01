@@ -225,7 +225,7 @@ body > .grid {
   justify-content: inherit;
 }
 .ui.container.profileButtons {
-  margin: 20px 20px;
+  margin: 5px;
   justify-content: inherit;
 }
 .ui.container.walkLists {
@@ -262,6 +262,21 @@ nav,
 section {
   text-align: center;
 }
+.ui.list {
+  column-count: 2;
+  padding-right: 50%;
+  padding-left: 10%;
+}
+.profileImageHolder {
+  height: 150px;
+  width: auto;
+}
+.ui.list .list > .item:first-child,
+.ui.list > .item:first-child,
+ol.ui.list li:first-child,
+ul.ui.list li:first-child {
+  margin: 5px;
+}
 /* content pages style end */
 
 /* Extra small devices (phones, 600px and down) */
@@ -273,7 +288,9 @@ section {
   }
   .ui.list {
     width: 100%;
-    margin-left: 20%;
+    margin-left: 15%;
+    padding-right: 25%;
+    padding-left: 0;
   }
   .ui.container.profileButtons {
     text-align: center;
@@ -302,7 +319,9 @@ section {
   }
   .ui.list {
     width: 100%;
-    margin-left: 20%;
+    margin-left: 9%;
+    padding-right: 25%;
+    padding-left: 10%;
   }
   .ui.container.profileButtons {
     text-align: center;
@@ -321,6 +340,15 @@ section {
   .ui.celled.table {
     background-color: white;
   }
+  .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+    margin-right: 0;
+  }
+  .ui.button.unvolunteer-button {
+    background-color: rgb(241, 79, 79);
+  }
+  .ui.button.deleteRequest-button {
+    background-color: rgb(241, 79, 79);
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -330,6 +358,26 @@ section {
   }
   .ui.list {
     width: 100%;
-    margin-left: 40%;
+    margin-left: 15%;
+    padding-right: 35%;
+    padding-left: 10%;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .ui.list {
+    width: 100%;
+    margin-left: 20%;
+    padding-right: 35%;
+    padding-left: 10%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .ui.list {
+    width: 100%;
+    margin-left: 25%;
+    padding-right: 35%;
+    padding-left: 10%;
   }
 }

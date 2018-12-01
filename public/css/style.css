@@ -306,6 +306,12 @@ ul.ui.list li:first-child {
   .ui.celled.table {
     background-color: white;
   }
+  .ui.button.unvolunteer-button {
+    background-color: rgb(241, 79, 79);
+  }
+  .ui.button.deleteRequest-button {
+    background-color: rgb(241, 79, 79);
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
